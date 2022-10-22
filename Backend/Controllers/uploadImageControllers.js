@@ -1,5 +1,5 @@
 const asyncHandler = require("express-async-handler");
-const UploadImage = require("../Models/uploadImageSchema");
+const UploadImage = require("../Models/UploadImage/uploadImageSchema");
 const { uploadImage, deleteImage } = require("../Libs/cloudinary.js");
 const fs = require("fs-extra");
 

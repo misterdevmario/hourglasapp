@@ -1,0 +1,5 @@
+>barsControllerMonday.js >barsControllerThuesday.js >barsControllerWednesday.js >barsControllerThursday.js >barsControllerFriday.js >barsControllerSaturday.js >barsControllerSunday.js
+
+>barsSchemaMondayday.js >barsSchemaThuesday.js >barsSchemaWednesday.js >barsSchemaThursday.js >barsSchemaFriday.js >barsSchemaSaturday.js >restaurantSchemaSunday.js
+
+

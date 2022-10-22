@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const carouselSchema = mongoose.Schema({
+const carouselSundaySchema = mongoose.Schema({
   hours: {
     type: String,
     required: true,
@@ -14,8 +14,9 @@ const carouselSchema = mongoose.Schema({
     required: true,
   },
   image: {
-    type: String
+    type: String,
+    required: true
   },
 });
 
-module.exports = mongoose.model("Carousel", carouselSchema);
+module.exports = mongoose.model("CarouselSunday", carouselSundaySchema);

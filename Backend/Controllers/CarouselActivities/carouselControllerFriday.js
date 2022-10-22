@@ -1,18 +1,18 @@
 const asyncHandler = require("express-async-handler");
-const Carousel = require("../Models/carouselSchema");
+const CarouselFriday = require("../../Models/CarouselActivities/carouselSchemaFriday");
 
-const getCarouselInfo = asyncHandler(async (req, res) => {
-  const getInfo = await Carousel.find();
+const getCarouselFriday = asyncHandler(async (req, res) => {
+  const getInfo = await CarouselFriday.find();
   res.status(200).json(getInfo);
 });
 
-const createCarouselInfo = asyncHandler(async (req, res) => {
+const createCarouselFriday = asyncHandler(async (req, res) => {
   const { hours, location, activity, image } = req.body;
   if (!req.body) {
     throw new Error("Please fill all inputs");
   }
 
-  const addCarouselItem = await Carousel.create({
+  const addCarouselItem = await CarouselFriday.create({
     hours,
     location,
     activity,
@@ -21,14 +21,13 @@ const createCarouselInfo = asyncHandler(async (req, res) => {
   res.status(200).json(addCarouselItem);
 });
 
-const updateCarouselInfo = asyncHandler(async (req, res) => {
-  const info = await Carousel.findById(req.params.id);
+const updateCarouselFriday = asyncHandler(async (req, res) => {
   if (!req.params.id) {
     res.status(400);
     throw new Error("Not found");
   }
 
-  const infoUpdated = await Carousel.findByIdAndUpdate(
+  const infoUpdated = await CarouselFriday.findByIdAndUpdate(
     req.params.id,
     req.body,
     { new: true }
@@ -36,8 +35,8 @@ const updateCarouselInfo = asyncHandler(async (req, res) => {
   res.status(200).json(infoUpdated);
 });
 
-const deleteCarouselInfo = asyncHandler(async (req, res) => {
-  const info = Carousel.findById(req.params.id);
+const deleteCarouselFriday = asyncHandler(async (req, res) => {
+  const info = CarouselFriday.findById(req.params.id);
   if (!info) {
     res.status(400);
     throw new Error("Not found");
@@ -47,8 +46,8 @@ const deleteCarouselInfo = asyncHandler(async (req, res) => {
 });
 
 module.exports = {
-  getCarouselInfo,
-  createCarouselInfo,
-  updateCarouselInfo,
-  deleteCarouselInfo,
+  getCarouselFriday,
+  createCarouselFriday,
+  updateCarouselFriday,
+  deleteCarouselFriday,
 };
