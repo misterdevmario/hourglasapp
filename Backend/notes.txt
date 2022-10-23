@@ -1,5 +1,3 @@
->barsControllerMonday.js >barsControllerThuesday.js >barsControllerWednesday.js >barsControllerThursday.js >barsControllerFriday.js >barsControllerSaturday.js >barsControllerSunday.js
+>carouselFlyerControllerMonday.js >carouselFlyerControllerThuesday.js >carouselFlyerControllerWednesday.js >carouselFlyerControllerThursday.js >carouselFlyerControllerFriday.js >carouselFlyerControllerSaturday.js >carouselFlyerControllerSunday.js
 
->barsSchemaMondayday.js >barsSchemaThuesday.js >barsSchemaWednesday.js >barsSchemaThursday.js >barsSchemaFriday.js >barsSchemaSaturday.js >restaurantSchemaSunday.js
-
-
+>carouselFlyerSchemaMondayday.js >carouselFlyerSchemaThuesday.js >carouselFlyerSchemaWednesday.js >carouselFlyerSchemaThursday.js >carouselFlyerSchemaFriday.js >carouselFlyerSchemaSaturday.js >carouselFlyerSchemaSunday.js
