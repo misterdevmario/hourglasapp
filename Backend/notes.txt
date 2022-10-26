@@ -1,3 +1,7 @@
 >carouselFlyerControllerMonday.js >carouselFlyerControllerThuesday.js >carouselFlyerControllerWednesday.js >carouselFlyerControllerThursday.js >carouselFlyerControllerFriday.js >carouselFlyerControllerSaturday.js >carouselFlyerControllerSunday.js
 
 >carouselFlyerSchemaMondayday.js >carouselFlyerSchemaThuesday.js >carouselFlyerSchemaWednesday.js >carouselFlyerSchemaThursday.js >carouselFlyerSchemaFriday.js >carouselFlyerSchemaSaturday.js >carouselFlyerSchemaSunday.js
+
+
+>vocabularyCarouselStaffSchema.js >vocabularyRestaurantsSchema.js >vocabularyBarsSchema.js
+>vocabularyCarouselStaffControllers.js >vocabularyRestaurantsControllers.js >vocabularyBarsControllers.js

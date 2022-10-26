@@ -7,14 +7,15 @@ const getCarouselStaffFriday = asyncHandler(async (req, res) => {
 });
 
 const createCarouselStaffFriday = asyncHandler(async (req, res) => {
-  const { name, phrase, image } = req.body;
+  const { name, phraseEn, phraseEs, image } = req.body;
   if (!req.body) {
     throw new Error("Please fill all inputs");
   }
 
   const addCarouselItem = await CarouselStaffFriday.create({
     name,
-    phrase,
+    phraseEn,
+    phraseEs,
     image,
   });
   res.status(200).json(addCarouselItem);
@@ -50,4 +51,3 @@ module.exports = {
   updateCarouselStaffFriday,
   deleteCarouselStaffFriday,
 };
-

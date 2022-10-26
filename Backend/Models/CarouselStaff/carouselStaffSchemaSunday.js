@@ -6,7 +6,11 @@ const carouselStaffSchemaSunday = mongoose.Schema({
     required: true,
   },
 
-  phrase: {
+  phraseEn: {
+    type: String,
+    required: true,
+  },
+  phraseEs: {
     type: String,
     required: true,
   },

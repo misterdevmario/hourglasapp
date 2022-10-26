@@ -1,7 +1,8 @@
 const express = require('express')
 const dotenv = require('dotenv').config()
-const {errorHandler} =require('./Errors/errorHandler')
+const {errorHandler} =require('./Middlewares/errorHandler')
 const router =require('./routes/routes.js')
+const usersRouter = require('./routes/userRoutes')
 const fileUpload = require('express-fileupload')
 let colors =require('colors')
 const connectDb = require('./Config/db')
@@ -18,6 +19,7 @@ app.use(fileUpload({
 }))
 app.use(express.urlencoded({extended:false}))
 app.use(router)
+app.use(usersRouter)
 app.use('*', (req, res)=>{
     res.send('Not Found')
 })
