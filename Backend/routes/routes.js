@@ -4,6 +4,7 @@ const router = express.Router();
 //UploadImage Controllers
 const {getUploadedImages, addUploadedImage,deleteUploadedImage} = require('../Controllers/UploadImage/uploadImageControllers')
 const {getUploadedStaffImages, addUploadedStaffImage,deleteUploadedStaffImage} = require('../Controllers/UploadImage/uploadStaffImageControllers')
+const {getUploadedFlyerImages, addUploadedFlyerImage,deleteUploadedFlyerImage} = require('../Controllers/UploadImage/uploadFlyerControllers')
 const {getUploadedBarsRestaurantsImages, addUploadedBarsRestaurantsImage,deleteUploadedBarsRestaurantsImage} = require('../Controllers/UploadImage/uploadBarsRestaurantsControllers')
 
 //CarouselActivities Controllers
@@ -35,22 +36,11 @@ const {getBarsSaturday, createBarsSaturday, updateBarsSaturday, deleteBarsSaturd
 const {getBarsSunday, createBarsSunday, updateBarsSunday, deleteBarsSunday} = require('../Controllers/Bars/barsControllerSunday')
 
 //Carousel Staff Controllers
-const {getCarouselStaffMonday, createCarouselStaffMonday, updateCarouselStaffMonday, deleteCarouselStaffMonday,} = require("../Controllers/CarouselStaff/carouselStaffControllerMonday");
-const {getCarouselStaffThuesday, createCarouselStaffThuesday, updateCarouselStaffThuesday, deleteCarouselStaffThuesday,} = require("../Controllers/CarouselStaff/carouselStaffControllerThuesday");
-const {getCarouselStaffWednesday, createCarouselStaffWednesday, updateCarouselStaffWednesday, deleteCarouselStaffWednesday,} = require("../Controllers/CarouselStaff/carouselStaffControllerWednesday");
-const {getCarouselStaffThursday, createCarouselStaffThursday, updateCarouselStaffThursday, deleteCarouselStaffThursday,} = require("../Controllers/CarouselStaff/carouselStaffControllerThursday");
-const {getCarouselStaffFriday, createCarouselStaffFriday, updateCarouselStaffFriday, deleteCarouselStaffFriday,} = require("../Controllers/CarouselStaff/carouselStaffControllerFriday");
-const {getCarouselStaffSaturday, createCarouselStaffSaturday, updateCarouselStaffSaturday, deleteCarouselStaffSaturday,} = require("../Controllers/CarouselStaff/carouselStaffControllerSaturday");
-const {getCarouselStaffSunday, createCarouselStaffSunday, updateCarouselStaffSunday, deleteCarouselStaffSunday,} = require("../Controllers/CarouselStaff/carouselStaffControllerSunday");
+const {getCarouselStaff, createCarouselStaff, updateCarouselStaff, deleteCarouselStaff,} = require("../Controllers/CarouselStaff/carouselStaffController");
+
 
 //Carousel Staff Controllers
-const {getCarouselFlyerMonday, createCarouselFlyerMonday, updateCarouselFlyerMonday, deleteCarouselFlyerMonday,} = require("../Controllers/CarouselFlyer/carouselFlyerControllerMonday");
-const {getCarouselFlyerThuesday, createCarouselFlyerThuesday, updateCarouselFlyerThuesday, deleteCarouselFlyerThuesday,} = require("../Controllers/CarouselFlyer/carouselFlyerControllerThuesday");
-const {getCarouselFlyerWednesday, createCarouselFlyerWednesday, updateCarouselFlyerWednesday, deleteCarouselFlyerWednesday,} = require("../Controllers/CarouselFlyer/carouselFlyerControllerWednesday");
-const {getCarouselFlyerThursday, createCarouselFlyerThursday, updateCarouselFlyerThursday, deleteCarouselFlyerThursday,} = require("../Controllers/CarouselFlyer/carouselFlyerControllerThursday");
-const {getCarouselFlyerFriday, createCarouselFlyerFriday, updateCarouselFlyerFriday, deleteCarouselFlyerFriday,} = require("../Controllers/CarouselFlyer/carouselFlyerControllerFriday");
-const {getCarouselFlyerSaturday, createCarouselFlyerSaturday, updateCarouselFlyerSaturday, deleteCarouselFlyerSaturday,} = require("../Controllers/CarouselFlyer/carouselFlyerControllerSaturday");
-const {getCarouselFlyerSunday, createCarouselFlyerSunday, updateCarouselFlyerSunday, deleteCarouselFlyerSunday,} = require("../Controllers/CarouselFlyer/carouselFlyerControllerSunday");
+
 
 const {getVocabulary, addVocabulary, deleteVocabularyWord} = require('../Controllers/Language/vocabularyActivitiesControllers')
 const {getLocationsVocabulary, addLocationsVocabulary, deleteLocationsVocabularyWord } = require('../Controllers/Language/vocabularyLocationsControllers')
@@ -71,7 +61,7 @@ router.route("/carouselactivities/friday/:id").put(updateCarouselFriday).delete(
 router.route("/carouselactivities/saturday").get(getCarouselSaturday).post(createCarouselSaturday);
 router.route("/carouselactivities/saturday/:id").put(updateCarouselSaturday).delete(deleteCarouselSaturday);
 router.route("/carouselactivities/Sunday").get(getCarouselSunday).post(createCarouselSunday);
-router.route("/carouselactivities/Sunday/:id").put(updateCarouselSunday).delete(deleteCarouselFriday);
+router.route("/carouselactivities/Sunday/:id").put(updateCarouselSunday).delete(deleteCarouselSunday);
 
 //Restaurants Routes
 router.route("/restaurants/monday").get(getRestaurantsMonday).post(createRestaurantsMonday);
@@ -106,36 +96,12 @@ router.route("/bars/sunday").get(getBarsSunday).post(createBarsSunday);
 router.route("/bars/sunday/:id").put(updateBarsSunday).delete(deleteBarsSunday)
 
 //Carousel Staff
-router.route("/carouselStaff/monday").get(getCarouselStaffMonday).post(createCarouselStaffMonday);
-router.route("/carouselStaff/monday/:id").put(updateCarouselStaffMonday).delete(deleteCarouselStaffMonday);
-router.route("/carouselStaff/thuesday").get(getCarouselStaffThuesday).post(createCarouselStaffThuesday);
-router.route("/carouselStaff/thuesday/:id").put(updateCarouselStaffThuesday).delete(deleteCarouselStaffThuesday);
-router.route("/carouselStaff/wednesday").get(getCarouselStaffWednesday).post(createCarouselStaffWednesday);
-router.route("/carouselStaff/wednesday/:id").put(updateCarouselStaffWednesday).delete(deleteCarouselStaffWednesday);
-router.route("/carouselStaff/thursday").get(getCarouselStaffThursday).post(createCarouselStaffThursday);
-router.route("/carouselStaff/thursday/:id").put(updateCarouselStaffThursday).delete(deleteCarouselStaffThursday);
-router.route("/carouselStaff/friday").get(getCarouselStaffFriday).post(createCarouselStaffFriday);
-router.route("/carouselStaff/friday/:id").put(updateCarouselStaffFriday).delete(deleteCarouselStaffFriday);
-router.route("/carouselStaff/saturday").get(getCarouselStaffSaturday).post(createCarouselStaffSaturday);
-router.route("/carouselStaff/saturday/:id").put(updateCarouselStaffSaturday).delete(deleteCarouselStaffSaturday);
-router.route("/carouselStaff/Sunday").get(getCarouselStaffSunday).post(createCarouselStaffSunday);
-router.route("/carouselStaff/Sunday/:id").put(updateCarouselStaffSunday).delete(deleteCarouselStaffSunday);
+router.route("/carouselstaff").get(getCarouselStaff).post(createCarouselStaff);
+router.route("/carouselstaff/:id").put(updateCarouselStaff).delete(deleteCarouselStaff);
+
 
 //Carousel Flyer
-router.route("/carouselFlyer/monday").get(getCarouselFlyerMonday).post(createCarouselFlyerMonday);
-router.route("/carouselFlyer/monday/:id").put(updateCarouselFlyerMonday).delete(deleteCarouselFlyerMonday);
-router.route("/carouselFlyer/thuesday").get(getCarouselFlyerThuesday).post(createCarouselFlyerThuesday);
-router.route("/carouselFlyer/thuesday/:id").put(updateCarouselFlyerThuesday).delete(deleteCarouselFlyerThuesday);
-router.route("/carouselFlyer/wednesday").get(getCarouselFlyerWednesday).post(createCarouselFlyerWednesday);
-router.route("/carouselFlyer/wednesday/:id").put(updateCarouselFlyerWednesday).delete(deleteCarouselFlyerWednesday);
-router.route("/carouselFlyer/thursday").get(getCarouselFlyerThursday).post(createCarouselFlyerThursday);
-router.route("/carouselFlyer/thursday/:id").put(updateCarouselFlyerThursday).delete(deleteCarouselFlyerThursday);
-router.route("/carouselFlyer/friday").get(getCarouselFlyerFriday).post(createCarouselFlyerFriday);
-router.route("/carouselFlyer/friday/:id").put(updateCarouselFlyerFriday).delete(deleteCarouselFlyerFriday);
-router.route("/carouselFlyer/saturday").get(getCarouselFlyerSaturday).post(createCarouselFlyerSaturday);
-router.route("/carouselFlyer/saturday/:id").put(updateCarouselFlyerSaturday).delete(deleteCarouselFlyerSaturday);
-router.route("/carouselFlyer/Sunday").get(getCarouselFlyerSunday).post(createCarouselFlyerSunday);
-router.route("/carouselFlyer/Sunday/:id").put(updateCarouselFlyerSunday).delete(deleteCarouselFlyerSunday);
+
 
 
 
@@ -155,8 +121,10 @@ router.route("/imagebank").get(getUploadedImages).post(addUploadedImage);
 router.route("/imagebank/:id").delete(deleteUploadedImage)
 router.route("/imagebank/staff").get(getUploadedStaffImages).post(addUploadedStaffImage);
 router.route("/imagebank/staff:id").delete(deleteUploadedStaffImage)
-router.route("/imagebank/BarsRestaurants").get(getUploadedBarsRestaurantsImages).post(addUploadedBarsRestaurantsImage);
-router.route("/imagebank/BarsRestaurants:id").delete(deleteUploadedBarsRestaurantsImage)
+router.route("/imagebank/barsRestaurants").get(getUploadedBarsRestaurantsImages).post(addUploadedBarsRestaurantsImage);
+router.route("/imagebank/barsRestaurants/:id").delete(deleteUploadedBarsRestaurantsImage)
+router.route("/imagebank/flyer").get(getUploadedFlyerImages).post(addUploadedFlyerImage);
+router.route("/imagebank/flyer/:id").delete(deleteUploadedFlyerImage)
 
 
 module.exports = router

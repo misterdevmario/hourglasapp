@@ -1,0 +1,34 @@
+.image {
+  min-height: 300px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.cardimage {
+  max-height: 150px;
+  max-width: 90px;
+  margin: 0.5rem;
+  background-color: rgba(161, 37, 168, 0.5);
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.3)
+}
+
+.cardimage img {
+  height: 90%;
+  width: 100%;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.cardname {
+  font-size: 0.5rem;
+  font-weight: 600;
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

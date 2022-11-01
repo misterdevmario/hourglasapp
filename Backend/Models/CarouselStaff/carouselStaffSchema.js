@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const carouselStaffSchemaWednesday = mongoose.Schema({
+const carouselStaffSchema = mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -14,6 +14,7 @@ const carouselStaffSchemaWednesday = mongoose.Schema({
     type: String,
     required: true,
   },
+
   image: {
     type: String,
     required: true,
@@ -21,6 +22,6 @@ const carouselStaffSchemaWednesday = mongoose.Schema({
 });
 
 module.exports = mongoose.model(
-  "CarouselStaffWednesday",
-  carouselStaffSchemaWednesday
+  "CarouselStaff",
+  carouselStaffSchema
 );

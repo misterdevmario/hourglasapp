@@ -34,7 +34,16 @@ cloudinary.config({
    const deleteBarsRestaurantsImage = async (id) => {
     return await cloudinary.uploader.destroy(id);
   };
+ const uploadFlyerImage = async (filePath) => {
+    return await cloudinary.uploader.upload(filePath, {
+      folder: "Flyers",
+    });
+  };
+  
+   const deleteFlyerImage = async (id) => {
+    return await cloudinary.uploader.destroy(id);
+  };
   
 
-  module.exports = {uploadImage, deleteImage, uploadStaffImage, deleteStaffImage, uploadBarsRestaurantsImage, deleteBarsRestaurantsImage}
+  module.exports = {uploadImage, deleteImage, uploadStaffImage, deleteStaffImage, uploadBarsRestaurantsImage, deleteBarsRestaurantsImage,uploadFlyerImage,deleteFlyerImage}
   

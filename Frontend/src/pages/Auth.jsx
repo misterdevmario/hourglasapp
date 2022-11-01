@@ -1,9 +1,17 @@
-import React from 'react'
+import { useAppInfo } from "../context/AppContext";
+
+import { Login } from "../components/index";
+
 
 function Auth() {
+
+const {appInfo} = useAppInfo()
+
   return (
-    <div>Auth</div>
-  )
+    <div>
+      <Login />
+    </div>
+  );
 }
 
-export default Auth
+export default Auth;

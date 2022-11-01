@@ -7,11 +7,14 @@ const fileUpload = require('express-fileupload')
 let colors =require('colors')
 const connectDb = require('./Config/db')
 const PORT = process.env.PORT || 8001
+const cors = require('cors')
+
 
 
 connectDb()
 
 const app = express()
+app.use(cors())
 app.use(express.json())
 app.use(fileUpload({
     useTempFiles:true,

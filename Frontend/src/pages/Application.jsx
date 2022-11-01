@@ -1,8 +1,15 @@
-import React from 'react'
+import { useAppInfo } from "../context/AppContext";
+
+
 
 function Application() {
+const {setAppInfo} = useAppInfo()
+
   return (
+   <>
     <div>Application</div>
+   
+   </>
   )
 }
 
