@@ -1,8 +1,9 @@
 import Auth from "./Pages/Auth";
 import Application from "./Pages/Application";
-import Dashboard from "./Pages/Dashboard";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 import NotFound from "./Pages/NotFound";
 import { Routes, Route } from "react-router-dom";
+
 import "./App.css";
 
 function App() {
@@ -19,3 +20,4 @@ function App() {
 }
 
 export default App;
+

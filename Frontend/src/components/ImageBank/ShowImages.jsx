@@ -1,20 +1,22 @@
 import { useAppInfo } from "../../context/AppContext";
-import './showimages.css'
+import "./showimages.css";
 
 const ShowImages = () => {
   const { appInfo } = useAppInfo();
-  console.log(appInfo);
 
   return (
-    <div className="image">
-      {appInfo.map((img) => (
-        <div className="cardimage">
-          <div key={img._id}>
-          <img src={img.image.url} alt={img.name} />
-          <div className="cardname">{img.name}</div>
-        </div>
-        </div>
-      ))}
+    <div className="image_container">
+      <div className="image_container-title">Gallery</div>
+      <div className="image">
+        {appInfo.images.map((img) => (
+          <div key={img._id} className="cardimage">
+            <div>
+              <img src={img.image.url} alt={img.name} />
+              <div className="cardname">{img.name}</div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

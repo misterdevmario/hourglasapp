@@ -120,7 +120,7 @@ router.route('/vocabulary/restaurants/:id').delete(deleteRestaurantsVocabularyWo
 router.route("/imagebank").get(getUploadedImages).post(addUploadedImage);
 router.route("/imagebank/:id").delete(deleteUploadedImage)
 router.route("/imagebank/staff").get(getUploadedStaffImages).post(addUploadedStaffImage);
-router.route("/imagebank/staff:id").delete(deleteUploadedStaffImage)
+router.route("/imagebank/staff/:id").delete(deleteUploadedStaffImage)
 router.route("/imagebank/barsRestaurants").get(getUploadedBarsRestaurantsImages).post(addUploadedBarsRestaurantsImage);
 router.route("/imagebank/barsRestaurants/:id").delete(deleteUploadedBarsRestaurantsImage)
 router.route("/imagebank/flyer").get(getUploadedFlyerImages).post(addUploadedFlyerImage);
