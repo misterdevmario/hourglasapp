@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node Backend/server.js",
-    "server": "nodemon Backend/server.js --ignore client",
+    "server": "nodemon Backend/server.js --ignore Frontend",
     "client": "npm run dev --prefix Frontend"
   },
   "keywords": [],

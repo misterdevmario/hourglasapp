@@ -1,0 +1,50 @@
+.locations_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
+.locations_container-title {
+  margin-top: 2vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: var(--font-size-l);
+}
+
+.locations_container-enes {
+  width: 70%;
+  min-height: 100%;
+  display: flex;
+  
+}
+
+.locations_es{
+    margin-top: 4vh;
+    width: 50%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.location_word{
+    margin-top: 2vh;
+    width: 50%;
+    min-height: 3rem ;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid #fff;
+}
+
+.locations_delete{
+    margin-top: 5vh;
+}

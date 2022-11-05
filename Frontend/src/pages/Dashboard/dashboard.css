@@ -15,7 +15,7 @@
   justify-content: space-around;
   align-items: center;
   background: var(--bg-main);
-  background: var(--bg-linear);
+  
 }
 
 .dashboard_navbar-logos-container {

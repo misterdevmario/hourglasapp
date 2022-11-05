@@ -1,17 +1,13 @@
-import { ShowImages } from "../../components/index";
 import breathless from "../../assets/Logos/breathless.png";
 import hourglass from "../../assets/Logos/hourglass.png";
 import { TbDoorExit } from "react-icons/tb";
-import { IoIosKeypad } from "react-icons/io"
-import {UploadImageForm, Modal} from '../../components/index'
-import {useModal} from '../../components/Modals/useModal'
-
+import { IoIosKeypad } from "react-icons/io";
+import { AddLocationForm, AddActivityForm } from "../../components/index";
 
 import "./dashboard.css";
 
 function Dashboard() {
 
-  const [isOpenGallery, closeGallery, openGallery] = useModal(false)
 
   return (
     <div className="dashboard_container">
@@ -27,30 +23,22 @@ function Dashboard() {
         <div className="dashboard_navbar-title">Admin Dashboard</div>
         <div className="dashboard_navbar-btn">
           <IoIosKeypad
-           className="dashboard_navbar-btn-iconapp"
-           size={55}
-           color="#a028cc"
-           />
-           <div className="appalert">Go to App</div>
+            className="dashboard_navbar-btn-iconapp"
+            size={40}
+            color="#fff"
+          />
+          <div className="appalert">Go to App</div>
           <TbDoorExit
             className="dashboard_navbar-btn-iconexit"
-            size={55}
-            color="#a028cc"
+            size={40}
+            color="#fff"
           />
           <div className="exitalert">Exit</div>
         </div>
       </div>
       <div className="dashboard_categories-container">
-          <UploadImageForm/>
-        <div className="dashboard_form">
-        <button onClick={openGallery}>Gallery</button>
-      <Modal isOpen={isOpenGallery} closeModal={closeGallery}>
-        <ShowImages/>
-      </Modal>
-          <button></button>
-        </div>
-      
-      
+        <AddLocationForm />
+        <AddActivityForm />
       </div>
     </div>
   );

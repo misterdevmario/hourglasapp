@@ -11,7 +11,7 @@
   z-index: 9;
   min-height: 70vh;
   width: 55vw;
-  background: var(--bg-linear);
+  background: var(--bg-main);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
 }
