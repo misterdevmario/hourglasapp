@@ -39,6 +39,14 @@ function Dashboard() {
       <div className="dashboard_categories-container">
         <AddLocationForm />
         <AddActivityForm />
+        <AddActivityForm />
+        <AddActivityForm />
+        <AddActivityForm />
+        <AddActivityForm />
+        <AddActivityForm />
+        <AddActivityForm />
+       
+       
       </div>
     </div>
   );

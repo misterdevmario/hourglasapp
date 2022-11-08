@@ -5,6 +5,8 @@ import {
   getLocationRequest,
   addActivityRequest,
   getActivityRequest,
+  deleteActivityRequest,
+  deleteLocationRequest
 } from "../api/infoRequests";
 
 const appContext = createContext();
@@ -42,15 +44,31 @@ export const AppContextProvider = ({ children }) => {
   const addActivity = async (activity) => {
     const act = await addActivityRequest(activity);
     appInfo.activities.push(act.data)
-    setAppInfo({...appInfo, })
+    setAppInfo({...appInfo})
   };
 
+  const deleteActivity = async(id)=>{
+    const act = await deleteActivityRequest(id)
+    console.log(id)
+    const newActs =appInfo.activities.filter(item => item._id !== id)
+    appInfo.activities = newActs
+    setAppInfo({...appInfo})
+  }
+  const deleteLocation = async(id)=>{
+    const act = await deleteLocationRequest(id)
+    console.log(id)
+    const newActs =appInfo.locations.filter(item => item._id !== id)
+    appInfo.locations = newActs
+    setAppInfo({...appInfo})
+  }
   return (
     <appContext.Provider
       value={{
         appInfo,
         addLocation,
         addActivity,
+        deleteActivity,
+        deleteLocation
       }}
     >
       {children}

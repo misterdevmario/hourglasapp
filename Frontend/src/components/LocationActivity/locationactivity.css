@@ -1,3 +1,13 @@
+.conditional_rendering-container {
+  width: 100%;
+  height: 100%;
+  margin-top: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .locations_container {
   width: 100%;
   height: 100%;
@@ -13,38 +23,112 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: var(--bg-main);
   font-size: var(--font-size-l);
+  border-bottom: 2px solid #663388;
+}
+
+.locations_container-title-language {
+  width: 70%;
+  height: 10%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 2vh;
+  color: var(--bg-main);
 }
 
 .locations_container-enes {
   width: 70%;
   min-height: 100%;
   display: flex;
-  
 }
 
-.locations_es{
-    margin-top: 4vh;
-    width: 50%;
-    min-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    
+.locations_es {
+  width: 50%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.location_word{
-    margin-top: 2vh;
-    width: 50%;
-    min-height: 3rem ;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-bottom: 2px solid #fff;
+.location_word {
+  margin-top: 2vh;
+  width: 80%;
+  min-height: 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 2px solid #fff;
 }
 
-.locations_delete{
-    margin-top: 5vh;
+.locations_delete {
+  margin-top: 7vh;
+}
+
+.locations_delete:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.toast-container {
+  width: 18rem;
+  height: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  font-size: 0.5rem;
+  background-color: var(--bg-main);
+}
+
+.toast_container-text {
+  width: 18rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.toast_container-text-name {
+  text-align: center;
+}
+.toast_container-btn {
+  width: 18rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toast_container-btn-delete {
+  background-color: rgb(247, 70, 70);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  border: none;
+  color: #fff;
+  height: 2rem;
+  width: 5rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+.toast_container-btn-cancel {
+  background-color: green;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  border: none;
+  color: #fff;
+  height: 2rem;
+  width: 5rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+.toast_container-btn-delete:hover {
+  transform: scale(1.1);
+}
+.toast_container-btn-cancel:hover {
+  transform: scale(1.1);
 }

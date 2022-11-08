@@ -1,22 +1,27 @@
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 import { useAppInfo } from "../../context/AppContext";
 import { BiNetworkChart } from "react-icons/bi";
+import { useModal } from "../Modals/useModal";
+import { Activity, Modal } from "../../components/index";
 import "./forms.css";
-import { useModal } from '../Modals/useModal';
-import {Activity,Modal} from '../../components/index'
 
 const AddActivityForm = () => {
   const { addActivity } = useAppInfo();
-  const [isOpenActivities, closeActivities, openActivities] = useModal(false)
+  const [isOpenActivities, closeActivities, openActivities] = useModal(false);
   return (
     <div className="form_container">
       <div className="form_container-icon">
-        <div className="icon-title">See Activities</div>
-        <BiNetworkChart onClick={openActivities} size={70} color="#fff" />
+        <div className="form_container-icon-title">See Activities</div>
+        <BiNetworkChart
+          className="form_container-icon-openmodal"
+          onClick={openActivities}
+          size={70}
+          color="#fff"
+        />
         <Modal isOpen={isOpenActivities} closeModal={closeActivities}>
-        <Activity/>
-      </Modal>
-       
+          <Activity />
+        </Modal>
       </div>
       <div className="form_container-form">
         <div className="form_container-form-title">Add Activity</div>
@@ -25,16 +30,45 @@ const AddActivityForm = () => {
             en: "",
             es: "",
           }}
-          onSubmit={(values, {resetForm}) => {
+          validationSchema={Yup.object({
+            en: Yup.string()
+              .required("Word in english is required!")
+              .min(3, "Minimum length of word is 3 characters!")
+              .max(19, "Maximum length of word is 19 characters!"),
+            es: Yup.string()
+              .required("Word in spanish is required!")
+              .min(3, "Minimum length of word is 3 characters!")
+              .max(19, "Maximum length of word is 19 characters!"),
+          })}
+          onSubmit={(values, { resetForm }) => {
             addActivity(values);
-            resetForm({values:''})
+            resetForm({ values: "" });
+            openActivities();
           }}
         >
           {({ handleSubmit }) => (
             <Form className="form_container-form" onSubmit={handleSubmit}>
-              <Field className="form_container-field" name="en" placeholder="Activity" />
-              <Field className="form_container-field" name="es" placeholder="Actividad" />
-              <button onClick={openActivities} type="submit">Save</button>
+              <Field
+                className="form_container-field"
+                name="en"
+                placeholder="English-Activity"
+              />
+              <ErrorMessage
+                component="p"
+                className="form_container-field-error"
+                name="en"
+              />
+              <Field
+                className="form_container-field"
+                name="es"
+                placeholder="Español-Actividad"
+              />
+              <ErrorMessage
+                component="p"
+                className="form_container-field-error"
+                name="es"
+              />
+              <button type="submit">Save</button>
             </Form>
           )}
         </Formik>
