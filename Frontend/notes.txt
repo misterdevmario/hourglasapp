@@ -1,0 +1,11 @@
+      {appInfo.images
+            .map((img) => (
+              <div key={img._id} className="images_container">
+                <RiDeleteBin5Line
+                  onClick={() => handleDelete(img._id, img.name)}
+                  className="image_delete"
+                  size={45}
+                />
+              </div>
+            ))
+            .reverse()}

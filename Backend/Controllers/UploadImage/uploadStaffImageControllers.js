@@ -9,7 +9,7 @@ const getUploadedStaffImages = asyncHandler(async (req, res) => {
 });
 
 const addUploadedStaffImage = asyncHandler(async (req, res) => {
-  const { name } = req.body;
+  const { name, phraseEs, phraseEn } = req.body;
   if (!req.body) {
     res.status(400);
     throw new Error("Not found");
@@ -23,7 +23,7 @@ const addUploadedStaffImage = asyncHandler(async (req, res) => {
     };
     await fs.remove(req.files.image.tempFilePath);
   }
-  const addImage = await UploadStaffImage.create({ name, image });
+  const addImage = await UploadStaffImage.create({ name,phraseEs, phraseEn, image });
 
   return res.status(200).json(addImage);
 });

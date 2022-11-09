@@ -24,6 +24,7 @@
  
 .form_container-icon-openmodal{
     cursor: pointer;
+    transition: all .5s ease-out;
 }
 
 .form_container-icon-openmodal:hover{
@@ -42,7 +43,7 @@ transform: scale(1.2);
     text-decoration: none;
     border:none;
     background:#fff;
-    width: 50px;
+    width: 40%;
     height: 13%;
     border-radius: var(--border-radius);
     
@@ -68,3 +69,17 @@ transform: scale(1.2);
     font-size: .7rem;
     
 }
+
+.form_container-form input{
+    width: 90%;
+    
+}
+
+input[type="file"]::file-selector-button {
+  width: 50%;
+  height: 100%;
+  font-size: .55rem;
+  background-color: var(--bg-modal);
+  border: none;
+  border-radius: var(--border-radius);
+  }

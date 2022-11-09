@@ -12,14 +12,14 @@ const AddLocationForm = () => {
   return (
     <div className="form_container">
       <div className="form_container-icon">
-        <div className="icon-title">See Locations</div>
+        <div className="icon-title">Locaciones</div>
         <MdShareLocation className="form_container-icon-openmodal" onClick={openLocations} size={70} color="#fff" />
         <Modal isOpen={isOpenLocations} closeModal={closeLocations}>
           <Locations />
         </Modal>
       </div>
       <div className="form_container-form">
-        <div className="form_container-form-title">Add Location</div>
+        <div className="form_container-form-title">Agregar locación</div>
         <Formik
           initialValues={{
             en: "",
@@ -27,13 +27,13 @@ const AddLocationForm = () => {
           }}
           validationSchema={Yup.object({
             en: Yup.string()
-              .required("Word in english is required!")
-              .min(3, "Minimum length of word is 3 characters!")
-              .max(19, "Maximum length of word is 19 characters!"),
+              .required("Palabra en ingles requerida!")
+              .min(3, "La longitud minima es de 3 letras!")
+              .max(19, "La longitud maxima es de 19 letras!"),
             es: Yup.string()
-              .required("Word in spanish is required!")
-              .min(3, "Minimum length of word is 3 characters!")
-              .max(19, "Maximum length of word is 19 characters!"),
+              .required("Palabra en español requerida!")
+              .min(3, "La longitud minima es de 3 letras!")
+              .max(19, "La longitud maxima es de 19 letras!"),
           })}
           onSubmit={(values, { resetForm }) => {
             addLocation(values);
@@ -46,7 +46,7 @@ const AddLocationForm = () => {
               <Field
                 className="form_container-field"
                 name="en"
-                placeholder="Location"
+                placeholder="Ingles"
               />
               <ErrorMessage
                 component="p"
@@ -56,14 +56,14 @@ const AddLocationForm = () => {
               <Field
                 className="form_container-field"
                 name="es"
-                placeholder="Locación"
+                placeholder="Español"
               />
               <ErrorMessage
                 component="p"
                 className="form_container-field-error"
                 name="es"
               />
-              <button type="submit">Save</button>
+              <button type="submit">Guardar</button>
             </Form>
           )}
         </Formik>

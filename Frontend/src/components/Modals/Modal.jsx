@@ -26,6 +26,7 @@ const Modal = ({ children, isOpen, closeModal }) => {
         size={35}
         color="#fff"
       />
+      
       <div className="modal-container">{children}</div>
     </div>
   );

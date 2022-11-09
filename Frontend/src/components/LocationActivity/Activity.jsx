@@ -12,12 +12,16 @@ const Activity = () => {
       return (
         <div className="conditional_rendering-container">
           <VscEmptyWindow size={100} color="#663388" />
-          <h1>There are not activities</h1>
+          <h1>No hay actividades para mostrar</h1>
         </div>
       );
 
     return (
       <>
+        <div className="locations_container-title-language">
+          <h2 className="language-word">Ingles</h2>
+          <h2 className="language-word">Español</h2>
+        </div>
         {appInfo.activities
           .map((act) => (
             <div key={act._id} className="locations_container-enes">
@@ -47,7 +51,7 @@ const Activity = () => {
     toast(
       (t) => (
         <div className="toast_container">
-          <div className="toast_container-text">Do you want to delete?</div>
+          <div className="toast_container-text">Esta seguro de eliminar?</div>
           <div className="toast_container-text-name">
             "{en}-{es}"
           </div>
@@ -59,13 +63,13 @@ const Activity = () => {
               }}
               className="toast_container-btn-delete"
             >
-              Delete
+              Eliminar
             </button>
             <button
               onClick={() => toast.dismiss(t.id)}
               className="toast_container-btn-cancel"
             >
-              Cancel
+              Cancelar
             </button>
           </div>
         </div>
@@ -85,11 +89,8 @@ const Activity = () => {
 
   return (
     <div className="locations_container">
-      <div className="locations_container-title">Activities</div>
-      <div className="locations_container-title-language">
-        <h2 className="language-word">English</h2>
-        <h2 className="language-word">Spanish</h2>
-      </div>
+      <div className="locations_container-title">Actividades</div>
+
       {render()}
     </div>
   );

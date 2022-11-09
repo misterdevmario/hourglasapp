@@ -2,24 +2,24 @@ import { useAppInfo } from "../../context/AppContext";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import toast from "react-hot-toast";
 import { VscEmptyWindow} from "react-icons/vsc";
-import "./carouselactivities.css";
+import "./carouselstaff.css";
 
-const CarouselActivities = () => {
-  const { appInfo, deleteImageBank } = useAppInfo();
+const CarouselStaff = () => {
+  const { appInfo, deleteStaffCarousel } = useAppInfo();
 
   const render = () => {
-    if (appInfo.images.length === 0)
+    if (appInfo.carouselstaff.length === 0)
       return (
         <div className="conditional_rendering-container">
           <VscEmptyWindow size={100} color="#663388" />
-          <h1>No hay imagenes para mostrar</h1>
+          <h1>No hay personal para mostrar</h1>
         </div>
       );
 
     return (
       <>
         <div className="carousel_image-container">
-          {appInfo.images.map((img) => (
+          {appInfo.carouselstaff.map((img) => (
             <div key={img._id} className="carousel_image-container-card">
               <img src={img.image.url} alt={img.name} />
               <div className="card-name-container">
@@ -47,7 +47,7 @@ const CarouselActivities = () => {
             <button
               onClick={() => {
                 toast.dismiss(t.id);
-                deleteImageBank(id);
+                deleteStaffCarousel(id);
               }}
               className="toast_container-btn-delete"
             >
@@ -77,11 +77,11 @@ const CarouselActivities = () => {
 
   return (
     <div className="locations_container">
-      <div className="locations_container-title">Carousel de Actividades</div>
+      <div className="locations_container-title">Carousel staff</div>
 
       {render()}
     </div>
   );
 };
 
-export default CarouselActivities;
+export default CarouselStaff;

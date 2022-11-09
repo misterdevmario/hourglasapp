@@ -1,74 +1,68 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useAppInfo } from "../../context/AppContext";
-import { BiNetworkChart } from "react-icons/bi";
+import { IoImageOutline } from "react-icons/io5";
 import { useModal } from "../Modals/useModal";
-import { Activity, Modal } from "../index";
+import { CarouselActivities, Modal } from "../index";
 import "./forms.css";
 
 const AddCarouselImageForm = () => {
-  const { addActivity } = useAppInfo();
-  const [isOpenActivities, closeActivities, openActivities] = useModal(false);
+  const { addImageBank } = useAppInfo();
+  const [isOpenCarouselImage, closeCarouselImage, openCarouselImage] =
+    useModal(false);
   return (
     <div className="form_container">
       <div className="form_container-icon">
-        <div className="form_container-icon-title">See Activities</div>
-        <BiNetworkChart
+        <div className="form_container-icon-title">Carousel Actividades</div>
+        <IoImageOutline
           className="form_container-icon-openmodal"
-          onClick={openActivities}
+          onClick={openCarouselImage}
           size={70}
           color="#fff"
         />
-        <Modal isOpen={isOpenActivities} closeModal={closeActivities}>
-          <Activity />
+        <Modal isOpen={isOpenCarouselImage} closeModal={closeCarouselImage}>
+          <CarouselActivities/>
         </Modal>
       </div>
       <div className="form_container-form">
-        <div className="form_container-form-title">Add Activity</div>
+        <div className="form_container-form-title">Agregar Imagen</div>
         <Formik
           initialValues={{
-            en: "",
-            es: "",
+            name: "",
+            image: null,
           }}
           validationSchema={Yup.object({
-            en: Yup.string()
-              .required("Word in english is required!")
-              .min(3, "Minimum length of word is 3 characters!")
-              .max(19, "Maximum length of word is 19 characters!"),
-            es: Yup.string()
-              .required("Word in spanish is required!")
-              .min(3, "Minimum length of word is 3 characters!")
-              .max(19, "Maximum length of word is 19 characters!"),
+            name: Yup.string()
+              .required("Nombre es requerido!")
+              .min(3, "La longitud minima es de 3 letras!")
+              .max(19, "La longitud maxima es de 19 letras!"),
+              image: Yup.mixed().required("Imagen es requerida!")
           })}
           onSubmit={(values, { resetForm }) => {
-            addActivity(values);
+            addImageBank(values);
             resetForm({ values: "" });
-            openActivities();
+            openCarouselImage()
           }}
         >
-          {({ handleSubmit }) => (
+          {({ handleSubmit, setFieldValue }) => (
             <Form className="form_container-form" onSubmit={handleSubmit}>
               <Field
                 className="form_container-field"
-                name="en"
-                placeholder="English-Activity"
+                name="name"
+                placeholder="Nombre"
               />
               <ErrorMessage
                 component="p"
                 className="form_container-field-error"
-                name="en"
+                name="name"
               />
-              <Field
-                className="form_container-field"
-                name="es"
-                placeholder="Español-Actividad"
-              />
-              <ErrorMessage
+               <input onChange={(e)=>setFieldValue('image',e.target.files[0])} type="file" name="image" />
+               <ErrorMessage
                 component="p"
                 className="form_container-field-error"
-                name="es"
+                name="image"
               />
-              <button type="submit">Save</button>
+               <button type="submit">Guardar</button>
             </Form>
           )}
         </Formik>

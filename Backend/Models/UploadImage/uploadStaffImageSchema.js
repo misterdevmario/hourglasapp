@@ -5,6 +5,14 @@ const uploadStaffImageSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  phraseEn: {
+    type: String,
+    required: true,
+  },
+  phraseEs: {
+    type: String,
+    required: true,
+  },
 
   image: {
     url: String,

@@ -12,7 +12,7 @@ const AddActivityForm = () => {
   return (
     <div className="form_container">
       <div className="form_container-icon">
-        <div className="form_container-icon-title">See Activities</div>
+        <div className="form_container-icon-title">Actividades</div>
         <BiNetworkChart
           className="form_container-icon-openmodal"
           onClick={openActivities}
@@ -24,7 +24,7 @@ const AddActivityForm = () => {
         </Modal>
       </div>
       <div className="form_container-form">
-        <div className="form_container-form-title">Add Activity</div>
+        <div className="form_container-form-title">Agregar actividad</div>
         <Formik
           initialValues={{
             en: "",
@@ -32,13 +32,13 @@ const AddActivityForm = () => {
           }}
           validationSchema={Yup.object({
             en: Yup.string()
-              .required("Word in english is required!")
-              .min(3, "Minimum length of word is 3 characters!")
-              .max(19, "Maximum length of word is 19 characters!"),
+              .required("Palabra en ingles requerida!")
+              .min(3, "La longitud minima es de 3 letras!")
+              .max(19, "La longitud maxima es de 19 letras!"),
             es: Yup.string()
-              .required("Word in spanish is required!")
-              .min(3, "Minimum length of word is 3 characters!")
-              .max(19, "Maximum length of word is 19 characters!"),
+              .required("Palabra en español requerida!")
+              .min(3, "La longitud minima es de 3 letras!")
+              .max(19, "La longitud maxima es de 19 letras!"),
           })}
           onSubmit={(values, { resetForm }) => {
             addActivity(values);
@@ -51,7 +51,7 @@ const AddActivityForm = () => {
               <Field
                 className="form_container-field"
                 name="en"
-                placeholder="English-Activity"
+                placeholder="Ingles"
               />
               <ErrorMessage
                 component="p"
@@ -61,14 +61,14 @@ const AddActivityForm = () => {
               <Field
                 className="form_container-field"
                 name="es"
-                placeholder="Español-Actividad"
+                placeholder="Español"
               />
               <ErrorMessage
                 component="p"
                 className="form_container-field-error"
                 name="es"
               />
-              <button type="submit">Save</button>
+              <button type="submit">Guardar</button>
             </Form>
           )}
         </Formik>

@@ -13,12 +13,17 @@ const Locations = () => {
       return (
         <div className="conditional_rendering-container">
           <VscEmptyWindow size={100} color="#663388" />
-          <h1>There are not locations</h1>
+          <h1>No hay locaciones para mostrar</h1>
         </div>
       );
 
     return (
       <>
+       
+        <div className="locations_container-title-language">
+          <h2 className="language-word">Ingles</h2>
+          <h2 className="language-word">Español</h2>
+        </div>
         {appInfo.locations
           .map((loc) => (
             <div key={loc._id} className="locations_container-enes">
@@ -48,7 +53,7 @@ const Locations = () => {
     toast(
       (t) => (
         <div className="toast_container">
-          <div className="toast_container-text">Do you want to delete?</div>
+          <div className="toast_container-text">Esta seguro de eliminar?</div>
           <div className="toast_container-text-name">
             "{en}-{es}"
           </div>
@@ -60,13 +65,13 @@ const Locations = () => {
               }}
               className="toast_container-btn-delete"
             >
-              Delete
+              Eliminar
             </button>
             <button
               onClick={() => toast.dismiss(t.id)}
               className="toast_container-btn-cancel"
             >
-              Cancel
+              Cancelar
             </button>
           </div>
         </div>
@@ -84,16 +89,9 @@ const Locations = () => {
     );
   };
 
-  return (
-    <div className="locations_container">
-      <div className="locations_container-title">Activities</div>
-      <div className="locations_container-title-language">
-        <h2 className="language-word">English</h2>
-        <h2 className="language-word">Spanish</h2>
-      </div>
-      {render()}
-    </div>
-  );
+  return <div className="locations_container">
+     <div className="locations_container-title">Locaciones</div>
+    {render()}</div>;
 };
 
 export default Locations;
