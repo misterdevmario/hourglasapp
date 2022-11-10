@@ -2,41 +2,38 @@ import { useAppInfo } from "../../context/AppContext";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import toast from "react-hot-toast";
 import { VscEmptyWindow } from "react-icons/vsc";
-import "./carouselstaff.css";
+import "../CarouselActivities/carouselactivities.css";
 
-const CarouselStaff = () => {
-  const { appInfo, deleteStaffCarousel } = useAppInfo();
+const CarouselFlyer = () => {
+  const { appInfo, deleteFlyerCarousel } = useAppInfo();
 
   const render = () => {
-    if (appInfo.carouselstaff.length === 0)
+    if (appInfo.carouselflyer.length === 0)
       return (
         <div className="conditional_rendering-container">
           <VscEmptyWindow size={100} color="#663388" />
-          <h1>No hay personal para mostrar</h1>
+          <h1>No hay imagenes para mostrar</h1>
         </div>
       );
 
     return (
       <>
         <div className="carousel_image-container">
-       {appInfo.carouselstaff.map((item) => (
-           <div className="carousel_image-container-card-container">
-           <div className="carousel_image-container-name">{item.name}</div>
-           <div className="carousel_image-container-img">
-            <img src={item.image.url} alt={item.name} />
-           </div>
-           <div className="carousel_image-container-phrase">
-             <div className="phraseen">"{item.phraseEn}"</div>
-             <div className="phraseen">"{item.phraseEs}"</div>
-           </div>
-           <RiDeleteBin5Line
-                  onClick={() => handleDelete(item._id, item.name)}
-                  className="image_delete"
-                  size={50}
-                />
-         </div>
-         
-       ))}
+          {appInfo.carouselflyer
+            .map((img) => (
+              <div key={img._id} className="carousel_image-container-card">
+                <img src={img.image.url} alt={img.name} />
+                <div className="card-name-container">
+                  <div className="card-name">{img.name}</div>
+                  <RiDeleteBin5Line
+                    onClick={() => handleDelete(img._id, img.name)}
+                    className="image_delete"
+                    size={50}
+                  />
+                </div>
+              </div>
+            ))
+            .reverse()}
         </div>
       </>
     );
@@ -52,7 +49,7 @@ const CarouselStaff = () => {
             <button
               onClick={() => {
                 toast.dismiss(t.id);
-                deleteStaffCarousel(id);
+                deleteFlyerCarousel(id);
               }}
               className="toast_container-btn-delete"
             >
@@ -82,11 +79,11 @@ const CarouselStaff = () => {
 
   return (
     <div className="locations_container">
-      <div className="locations_container-title">Carousel staff</div>
+      <div className="locations_container-title">Carousel de Flyers</div>
 
       {render()}
     </div>
   );
 };
 
-export default CarouselStaff;
+export default CarouselFlyer;

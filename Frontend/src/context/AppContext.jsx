@@ -12,6 +12,9 @@ import {
   getCarouselStaffImagesRequest,
   addCarouselStaffImageRequest,
   deleteCarouselStaffImageRequest,
+  getCarouselFlyerImagesRequest,
+  addCarouselFlyerImageRequest,
+  deleteCarouselFlyerImageRequest,
 } from "../api/infoRequests";
 
 const appContext = createContext();
@@ -26,7 +29,8 @@ export const AppContextProvider = ({ children }) => {
     images: [],
     locations: [],
     activities: [],
-    carouselstaff:[]
+    carouselstaff:[],
+    carouselflyer:[],
   });
 
   useEffect(() => {
@@ -35,11 +39,13 @@ export const AppContextProvider = ({ children }) => {
       const loc = await getLocationRequest();
       const act = await getActivityRequest();
       const cstaff = await getCarouselStaffImagesRequest()
+      const cflyer = await getCarouselFlyerImagesRequest()
       setAppInfo({
         images: res.data,
         locations: loc.data,
         activities: act.data,
-        carouselstaff: cstaff.data
+        carouselstaff: cstaff.data,
+        carouselflyer: cflyer.data
       });
     })();
   }, []);
@@ -104,6 +110,23 @@ const deleteStaffCarousel = async (id) => {
   appInfo.carouselstaff = newCarouselStaffImages;
   setAppInfo({ ...appInfo });
 };
+  
+//Imagebank/flyer
+const addFlyerCarousel = async (flyers) => {
+  const cflyer = await addCarouselFlyerImageRequest(flyers);
+  appInfo.carouselflyer.push(cflyer.data);
+  setAppInfo({ ...appInfo });
+  
+};
+
+const deleteFlyerCarousel = async (id) => {
+  const cflyer = await deleteCarouselFlyerImageRequest(id);
+  
+  const newCarouselFlyerImages = appInfo.carouselflyer.filter((item) => item._id !== id);
+  appInfo.carouselflyer = newCarouselFlyerImages;
+  setAppInfo({ ...appInfo });
+};
+
 
 
   return (
@@ -117,7 +140,9 @@ const deleteStaffCarousel = async (id) => {
         addImageBank,
         deleteImageBank,
         addStaffCarousel,
-        deleteStaffCarousel
+        deleteStaffCarousel,
+        addFlyerCarousel,
+        deleteFlyerCarousel
        
       }}
     >

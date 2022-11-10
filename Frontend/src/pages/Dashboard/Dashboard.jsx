@@ -2,13 +2,17 @@ import breathless from "../../assets/Logos/breathless.png";
 import hourglass from "../../assets/Logos/hourglass.png";
 import { TbDoorExit } from "react-icons/tb";
 import { IoIosKeypad } from "react-icons/io";
-import { AddLocationForm, AddActivityForm, AddCarosuselImageForm,AddStaffCarouselForm } from "../../components/index";
+import {
+  AddLocationForm,
+  AddActivityForm,
+  AddCarosuselImageForm,
+  AddStaffCarouselForm,
+  AddCarouselFlyerForm,
+} from "../../components/index";
 
 import "./dashboard.css";
 
 function Dashboard() {
-
-
   return (
     <div className="dashboard_container">
       <div className="dashboard_navbar">
@@ -40,10 +44,10 @@ function Dashboard() {
         <AddLocationForm />
         <AddActivityForm />
         <AddCarosuselImageForm />
-        <AddStaffCarouselForm/>
-     
-       
-       
+        <AddStaffCarouselForm />
+        <AddCarouselFlyerForm />
+        <AddCarouselFlyerForm />
+        <AddCarouselFlyerForm />
       </div>
     </div>
   );

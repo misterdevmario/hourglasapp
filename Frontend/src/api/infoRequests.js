@@ -40,7 +40,25 @@ export const getCarouselStaffImagesRequest = async () =>
 export const deleteCarouselStaffImageRequest = async (id) =>
   await axios.delete("http://localhost:8000/imagebank/staff/" + id);
 
+//ImageBank/flyers
+export const getCarouselFlyerImagesRequest = async () =>
+  await axios.get("http://localhost:8000/imagebank/flyer");
 
+  export const addCarouselFlyerImageRequest = async (flyers) => {
+    const form = new FormData();
+  for (let key in flyers) {
+    form.append(key, flyers[key]);
+  }
+
+ return await axios.post("http://localhost:8000/imagebank/flyer", form, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  });
+};
+
+export const deleteCarouselFlyerImageRequest = async (id) =>
+  await axios.delete("http://localhost:8000/imagebank/flyer/" + id);
 
 //Vocabulary Locations
 export const getLocationRequest = async () =>
