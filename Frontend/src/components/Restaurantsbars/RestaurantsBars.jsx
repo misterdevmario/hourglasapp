@@ -2,31 +2,30 @@ import { useAppInfo } from "../../context/AppContext";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import toast from "react-hot-toast";
 import { VscEmptyWindow} from "react-icons/vsc";
-import "./carouselactivities.css";
+import "../CarouselActivities/carouselactivities.css";
 
-const CarouselActivities = () => {
-  const { appInfo, deleteImageBank } = useAppInfo();
-console.log(appInfo.images)
+const RestaurantsBars = () => {
+  const { appInfo, deleteRestaurantBar } = useAppInfo();
+
   const render = () => {
-    if (appInfo.images.length === 0)
+    if (appInfo.restaurantsbars.length === 0)
       return (
         <div className="conditional_rendering-container">
           <VscEmptyWindow size={100} color="#663388" />
-          <h1>No hay imagenes para mostrar</h1>
+          <h1>No hay logotipos para mostrar</h1>
         </div>
       );
 
     return (
       <>
         <div className="carousel_image-container">
-          {appInfo.images.map((img) => (
+          {appInfo.restaurantsbars.map((img) => (
             <div key={img._id} className="carousel_image-container-card">
-              <img src={img.image.url} alt={img.en} />
+              <img src={img.image.url} alt={img.name} />
               <div className="card-name-container">
-                <div className="card-name">{img.en}</div>
-                <div className="card-name">{img.es}</div>
+                <div className="card-name">{img.name}</div>
                 <RiDeleteBin5Line
-                  onClick={() => handleDelete(img._id, img.en, img.es)}
+                  onClick={() => handleDelete(img._id, img.name)}
                   className="image_delete"
                   size={50}
                 />
@@ -38,18 +37,17 @@ console.log(appInfo.images)
     );
   };
 
-  const handleDelete = (id, en, es) => {
+  const handleDelete = (id, name) => {
     toast(
       (t) => (
         <div className="toast_container">
           <div className="toast_container-text">Esta seguro de eliminar?</div>
-          <div className="toast_container-text-name">"{en}"</div>
-          <div className="toast_container-text-name">"{es}"</div>
+          <div className="toast_container-text-name">"{name}"</div>
           <div className="toast_container-btn">
             <button
               onClick={() => {
                 toast.dismiss(t.id);
-                deleteImageBank(id);
+                deleteRestaurantBar(id);
               }}
               className="toast_container-btn-delete"
             >
@@ -79,11 +77,11 @@ console.log(appInfo.images)
 
   return (
     <div className="locations_container">
-      <div className="locations_container-title">Carousel de Actividades</div>
+      <div className="locations_container-title">Restaurantes y Bares</div>
 
       {render()}
     </div>
   );
 };
 
-export default CarouselActivities;
+export default RestaurantsBars;

@@ -25,6 +25,7 @@ const {getRestaurantsThursday, createRestaurantsThursday, updateRestaurantsThurs
 const {getRestaurantsFriday, createRestaurantsFriday, updateRestaurantsFriday, deleteRestaurantsFriday} = require('../Controllers/Restaurants/restaurantsControllerFriday')
 const {getRestaurantsSaturday, createRestaurantsSaturday, updateRestaurantsSaturday, deleteRestaurantsSaturday} = require('../Controllers/Restaurants/restaurantsControllerSaturday')
 const {getRestaurantsSunday, createRestaurantsSunday, updateRestaurantsSunday, deleteRestaurantsSunday} = require('../Controllers/Restaurants/restaurantsControllerSunday')
+const {getRestaurantsSpecs, createRestaurantsSpecs, updateRestaurantsSpecs, deleteRestaurantsSpecs} = require('../Controllers/Restaurants/restaurantsSpecsController')
 
 //Bars Controllers
 const {getBarsMonday, createBarsMonday, updateBarsMonday, deleteBarsMonday} = require('../Controllers/Bars/barsControllerMonday')
@@ -100,8 +101,9 @@ router.route("/carouselstaff").get(getCarouselStaff).post(createCarouselStaff);
 router.route("/carouselstaff/:id").put(updateCarouselStaff).delete(deleteCarouselStaff);
 
 
-//Carousel Flyer
-
+//Restaurants Specs
+router.route("/restaurants/specs").get(getRestaurantsSpecs).post(createRestaurantsSpecs);
+router.route("/restaurants/specs/:id").put(updateRestaurantsSpecs).delete(deleteRestaurantsSpecs)
 
 
 
@@ -121,8 +123,8 @@ router.route("/imagebank").get(getUploadedImages).post(addUploadedImage);
 router.route("/imagebank/:id").delete(deleteUploadedImage)
 router.route("/imagebank/staff").get(getUploadedStaffImages).post(addUploadedStaffImage);
 router.route("/imagebank/staff/:id").delete(deleteUploadedStaffImage)
-router.route("/imagebank/barsRestaurants").get(getUploadedBarsRestaurantsImages).post(addUploadedBarsRestaurantsImage);
-router.route("/imagebank/barsRestaurants/:id").delete(deleteUploadedBarsRestaurantsImage)
+router.route("/imagebank/barsrestaurants").get(getUploadedBarsRestaurantsImages).post(addUploadedBarsRestaurantsImage);
+router.route("/imagebank/barsrestaurants/:id").delete(deleteUploadedBarsRestaurantsImage)
 router.route("/imagebank/flyer").get(getUploadedFlyerImages).post(addUploadedFlyerImage);
 router.route("/imagebank/flyer/:id").delete(deleteUploadedFlyerImage)
 

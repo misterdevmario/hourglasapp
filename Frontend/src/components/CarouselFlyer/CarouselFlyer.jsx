@@ -24,7 +24,8 @@ const CarouselFlyer = () => {
               <div key={img._id} className="carousel_image-container-card">
                 <img src={img.image.url} alt={img.name} />
                 <div className="card-name-container">
-                  <div className="card-name">{img.name}</div>
+                  <div className="card-name">{img.en}</div>
+                  <div className="card-name">{img.es}</div>
                   <RiDeleteBin5Line
                     onClick={() => handleDelete(img._id, img.name)}
                     className="image_delete"

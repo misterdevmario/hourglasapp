@@ -58,7 +58,27 @@ export const getCarouselFlyerImagesRequest = async () =>
 };
 
 export const deleteCarouselFlyerImageRequest = async (id) =>
-  await axios.delete("http://localhost:8000/imagebank/flyer/" + id);
+  await axios.delete("http://localhost:8000/imagebank/barsrestaurants/" + id);
+
+//ImageBank/RestaurantsBars
+export const getRestaurantsBarsImagesRequest = async () =>
+  await axios.get("http://localhost:8000/imagebank/barsrestaurants");
+
+  export const addRestaurantsBarsImageRequest = async (resbar) => {
+    const form = new FormData();
+  for (let key in resbar) {
+    form.append(key, resbar[key]);
+  }
+
+ return await axios.post("http://localhost:8000/imagebank/barsrestaurants", form, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  });
+};
+
+export const deleteRestaurantsBarsImageRequest = async (id) =>
+  await axios.delete("http://localhost:8000/imagebank/barsrestaurants/" + id);
 
 //Vocabulary Locations
 export const getLocationRequest = async () =>

@@ -1,75 +1,60 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useAppInfo } from "../../context/AppContext";
-import { HiOutlineDocumentReport } from "react-icons/hi";
+import { BiRestaurant } from "react-icons/bi";
 import { useModal } from "../Modals/useModal";
-import { CarouselFlyer, Modal } from "../index";
+import { RestaurantsBars, Modal } from "../index";
 import "./forms.css";
 
-const AddCarouselFlyerForm = () => {
-  const { addFlyerCarousel } = useAppInfo();
-  const [isOpenCarouselFlyerImage, closeCarouselFlyerImage, openCarouselFlyerImage] =
+const AddRestaurantImageForm = () => {
+  const { addRestaurantBar } = useAppInfo();
+  const [isOpenRestaurant, closeRestaurant, openRestaurant] =
     useModal(false);
   return (
     <div className="form_container">
       <div className="form_container-icon">
-        <div className="form_container-icon-title">Carousel Flyers</div>
-        <HiOutlineDocumentReport
+        <div className="form_container-icon-title">Restaurantes y Bares</div>
+        <BiRestaurant
           className="form_container-icon-openmodal"
-          onClick={openCarouselFlyerImage}
-          size={60}
+          onClick={openRestaurant}
+          size={70}
           color="#fff"
         />
-        <Modal isOpen={isOpenCarouselFlyerImage} closeModal={closeCarouselFlyerImage}>
-          <CarouselFlyer/>
+        <Modal isOpen={isOpenRestaurant} closeModal={closeRestaurant}>
+          <RestaurantsBars/>
         </Modal>
       </div>
       <div className="form_container-form">
-        <div className="form_container-form-title">Agregar Flyer</div>
+        <div className="form_container-form-title">Agregar Logotipo</div>
         <Formik
           initialValues={{
-            en: "",
-            es: "",
+            name: "",
             image: null,
           }}
           validationSchema={Yup.object({
-            en: Yup.string()
-              .required("Palabra en ingles requerida!")
+            name: Yup.string()
+              .required("Nombre es requerido!")
               .min(3, "La longitud minima es de 3 letras!")
               .max(19, "La longitud maxima es de 19 letras!"),
-            es: Yup.string()
-              .required("Palabra en español requerida!")
-              .min(3, "La longitud minima es de 3 letras!")
-              .max(19, "La longitud maxima es de 19 letras!"),
-              image: Yup.mixed().required("Flyer es requerido!")
+              image: Yup.mixed().required("Imagen es requerida!")
           })}
           onSubmit={(values, { resetForm }) => {
-            addFlyerCarousel(values);
+            addRestaurantBar(values);
             resetForm({ values: "" });
-            openCarouselFlyerImage()
+            openRestaurant()
           }}
         >
           {({ handleSubmit, setFieldValue }) => (
             <Form className="form_container-form" onSubmit={handleSubmit}>
               <Field
                 className="form_container-field"
-                name="en"
-                placeholder="Ingles"
+                name="name"
+                placeholder="Nombre"
               />
               <ErrorMessage
                 component="p"
                 className="form_container-field-error"
-                name="en"
-              />
-              <Field
-                className="form_container-field"
-                name="es"
-                placeholder="Español"
-              />
-              <ErrorMessage
-                component="p"
-                className="form_container-field-error"
-                name="es"
+                name="name"
               />
                <input onChange={(e)=>setFieldValue('image',e.target.files[0])} type="file" name="image" />
                <ErrorMessage
@@ -86,4 +71,4 @@ const AddCarouselFlyerForm = () => {
   );
 };
 
-export default AddCarouselFlyerForm;
+export default AddRestaurantImageForm;

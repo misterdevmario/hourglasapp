@@ -20,7 +20,7 @@ const CarouselStaff = () => {
       <>
         <div className="carousel_image-container">
        {appInfo.carouselstaff.map((item) => (
-           <div className="carousel_image-container-card-container">
+           <div key={item._id}className="carousel_image-container-card-container">
            <div className="carousel_image-container-name">{item.name}</div>
            <div className="carousel_image-container-img">
             <img src={item.image.url} alt={item.name} />

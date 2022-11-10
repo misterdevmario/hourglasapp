@@ -15,6 +15,9 @@ import {
   getCarouselFlyerImagesRequest,
   addCarouselFlyerImageRequest,
   deleteCarouselFlyerImageRequest,
+  getRestaurantsBarsImagesRequest,
+  addRestaurantsBarsImageRequest,
+  deleteRestaurantsBarsImageRequest,
 } from "../api/infoRequests";
 
 const appContext = createContext();
@@ -31,6 +34,7 @@ export const AppContextProvider = ({ children }) => {
     activities: [],
     carouselstaff:[],
     carouselflyer:[],
+    restaurantsbars:[]
   });
 
   useEffect(() => {
@@ -40,12 +44,14 @@ export const AppContextProvider = ({ children }) => {
       const act = await getActivityRequest();
       const cstaff = await getCarouselStaffImagesRequest()
       const cflyer = await getCarouselFlyerImagesRequest()
+      const cresbars = await getRestaurantsBarsImagesRequest()
       setAppInfo({
         images: res.data,
         locations: loc.data,
         activities: act.data,
         carouselstaff: cstaff.data,
-        carouselflyer: cflyer.data
+        carouselflyer: cflyer.data,
+        restaurantsbars:cresbars.data
       });
     })();
   }, []);
@@ -126,6 +132,21 @@ const deleteFlyerCarousel = async (id) => {
   appInfo.carouselflyer = newCarouselFlyerImages;
   setAppInfo({ ...appInfo });
 };
+//Imagebank/RestaurantsBars
+const addRestaurantBar = async (resbar) => {
+  const cresbars = await addRestaurantsBarsImageRequest(resbar);
+  appInfo.restaurantsbars.push(cresbars.data);
+  setAppInfo({ ...appInfo });
+  
+};
+
+const deleteRestaurantBar = async (id) => {
+  const cresbars = await deleteRestaurantsBarsImageRequest(id);
+  
+  const newRestaurantBarImages = appInfo.restaurantsbars.filter((item) => item._id !== id);
+  appInfo.restaurantsbars = newRestaurantBarImages;
+  setAppInfo({ ...appInfo });
+};
 
 
 
@@ -142,7 +163,9 @@ const deleteFlyerCarousel = async (id) => {
         addStaffCarousel,
         deleteStaffCarousel,
         addFlyerCarousel,
-        deleteFlyerCarousel
+        deleteFlyerCarousel,
+        addRestaurantBar,
+        deleteRestaurantBar
        
       }}
     >

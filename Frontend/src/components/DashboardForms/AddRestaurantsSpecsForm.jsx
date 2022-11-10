@@ -6,20 +6,20 @@ import { useModal } from "../Modals/useModal";
 import { Activity, Modal } from "../../components/index";
 import "./forms.css";
 
-const AddActivityForm = () => {
+const AddRestaurantsSpecsForm = () => {
   const { addActivity } = useAppInfo();
-  const [isOpenActivities, closeActivities, openActivities] = useModal(false);
+  const [isOpenRestaurantsSpecs, closeRestaurantsSpecs, openRestaurantsSpecs] = useModal(false);
   return (
     <div className="form_container">
       <div className="form_container-icon">
         <div className="form_container-icon-title">Actividades</div>
         <BiNetworkChart
           className="form_container-icon-openmodal"
-          onClick={openActivities}
+          onClick={openRestaurantsSpecs}
           size={70}
           color="#fff"
         />
-        <Modal isOpen={isOpenActivities} closeModal={closeActivities}>
+        <Modal isOpen={isOpenRestaurantsSpecs} closeModal={closeRestaurantsSpecs}>
           <Activity />
         </Modal>
       </div>
@@ -43,7 +43,7 @@ const AddActivityForm = () => {
           onSubmit={(values, { resetForm }) => {
             addActivity(values);
             resetForm({ values: "" });
-            openActivities();
+            openRestaurantsSpecs();
           }}
         >
           {({ handleSubmit }) => (
@@ -77,4 +77,4 @@ const AddActivityForm = () => {
   );
 };
 
-export default AddActivityForm;
+export default AddRestaurantsSpecsForm;

@@ -39,11 +39,11 @@ const AddCarouselImageForm = () => {
               .min(3, "La longitud minima es de 3 letras!")
               .max(19, "La longitud maxima es de 19 letras!"),
             phraseEn: Yup.string()
-              .required("frase en ingles es requerida!")
+              .required("Frase en ingles es requerida!")
               .min(3, "La longitud minima es de 3 letras!")
               .max(19, "La longitud maxima es de 19 letras!"),
             phraseEs: Yup.string()
-              .required("Nombre es requerido!")
+              .required("Frase en español es requerida!")
               .min(3, "La longitud minima es de 3 letras!")
               .max(19, "La longitud maxima es de 19 letras!"),
             image: Yup.mixed().required("Imagen es requerida!"),

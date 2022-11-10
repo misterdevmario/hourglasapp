@@ -4,10 +4,11 @@ import { TbDoorExit } from "react-icons/tb";
 import { IoIosKeypad } from "react-icons/io";
 import {
   AddLocationForm,
-  AddActivityForm,
+
   AddCarosuselImageForm,
   AddStaffCarouselForm,
   AddCarouselFlyerForm,
+  AddRestaurantImageForm
 } from "../../components/index";
 
 import "./dashboard.css";
@@ -42,12 +43,11 @@ function Dashboard() {
       </div>
       <div className="dashboard_categories-container">
         <AddLocationForm />
-        <AddActivityForm />
         <AddCarosuselImageForm />
         <AddStaffCarouselForm />
         <AddCarouselFlyerForm />
-        <AddCarouselFlyerForm />
-        <AddCarouselFlyerForm />
+        <AddRestaurantImageForm />
+       
       </div>
     </div>
   );

@@ -1,7 +1,11 @@
 const mongoose = require("mongoose");
 
 const uploadFlyerSchema = mongoose.Schema({
-  name: {
+  en: {
+    type: String,
+    required: true,
+  },
+  es: {
     type: String,
     required: true,
   },
