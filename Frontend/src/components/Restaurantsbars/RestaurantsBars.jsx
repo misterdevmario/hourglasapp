@@ -20,14 +20,14 @@ const RestaurantsBars = () => {
       <>
         <div className="carousel_image-container">
           {appInfo.restaurantsbars.map((img) => (
-            <div key={img._id} className="carousel_image-container-card">
+            <div key={img._id} className="carousel_image-containerrestaurantsbars-card">
               <img src={img.image.url} alt={img.name} />
-              <div className="card-name-container">
-                <div className="card-name">{img.name}</div>
+              <div className="card-name-container-restaurantsbars">
+                <div className="restaurantsbarscard-name">{img.name}</div>
                 <RiDeleteBin5Line
                   onClick={() => handleDelete(img._id, img.name)}
-                  className="image_delete"
-                  size={50}
+                  className="restaurantsbars-image_delete"
+                  size={60}
                 />
               </div>
             </div>

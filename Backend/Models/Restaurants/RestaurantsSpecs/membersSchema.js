@@ -1,7 +1,6 @@
-
 const mongoose = require("mongoose");
 
-const vocabularyBarsSchema = mongoose.Schema({
+const membersSchema = mongoose.Schema({
   en: {
     type: String,
     required: true,
@@ -12,4 +11,4 @@ const vocabularyBarsSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("VocabularyBars", vocabularyBarsSchema);
+module.exports = mongoose.model("Members", membersSchema);

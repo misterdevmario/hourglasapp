@@ -2,16 +2,29 @@ const mongoose = require("mongoose");
 
 const restaurantsSpecsSchema = mongoose.Schema({
 
-  type: {
+  typeEn: {
     type: String,
     required: true,
   },
-  service: {
+  serviceEn: {
     type: String,
     required: true,
   },
 
-  members: {
+  membersEn: {
+    type: String,
+    required: true,
+  },
+  typeEs: {
+    type: String,
+    required: true,
+  },
+  serviceEs: {
+    type: String,
+    required: true,
+  },
+
+  membersEs: {
     type: String,
     required: true,
   },

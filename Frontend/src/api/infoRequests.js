@@ -87,11 +87,28 @@ export const addLocationRequest = async (location) =>
   await axios.post("http://localhost:8000/vocabulary/locations", location);
 export const deleteLocationRequest = async (id) =>
   await axios.delete("http://localhost:8000/vocabulary/locations/" + id);
-//Vocabulary Activieties
-export const getActivityRequest = async () =>
-  await axios.get("http://localhost:8000/vocabulary/activities");
-export const addActivityRequest = async (activity) =>
-  await axios.post("http://localhost:8000/vocabulary/activities", activity);
-export const deleteActivityRequest = async (id) =>
-  await axios.delete("http://localhost:8000/vocabulary/activities/" + id);
-//Upload
+  
+  //Restaurants Specs Type
+export const getRestaurantsTypeRequest = async () =>
+  await axios.get("http://localhost:8000/restaurants/specs/type");
+export const addRestaurantsTypeRequest = async (type) =>
+  await axios.post("http://localhost:8000/restaurants/specs/type", type);
+export const deleteRestaurantsTypeRequest = async (id) =>
+  await axios.delete("http://localhost:8000/restaurants/specs/type/" + id);
+
+  //Restaurants Service
+export const getRestaurantsServiceRequest = async () =>
+  await axios.get("http://localhost:8000/restaurants/specs/service");
+export const addRestaurantsServiceRequest = async (service) =>
+  await axios.post("http://localhost:8000/restaurants/specs/service", service);
+export const deleteRestaurantsServiceRequest = async (id) =>
+  await axios.delete("http://localhost:8000/restaurants/specs/service/" + id);
+
+  //Restaurants Specs Members
+export const getRestaurantsMembersRequest = async () =>
+  await axios.get("http://localhost:8000/restaurants/specs/members");
+export const addRestaurantsMembersRequest = async (members) =>
+  await axios.post("http://localhost:8000/restaurants/specs/members", members);
+export const deleteRestaurantsMembersRequest = async (id) =>
+  await axios.delete("http://localhost:8000/restaurants/specs/members/" + id);
+

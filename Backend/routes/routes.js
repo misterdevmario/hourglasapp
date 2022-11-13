@@ -25,7 +25,7 @@ const {getRestaurantsThursday, createRestaurantsThursday, updateRestaurantsThurs
 const {getRestaurantsFriday, createRestaurantsFriday, updateRestaurantsFriday, deleteRestaurantsFriday} = require('../Controllers/Restaurants/restaurantsControllerFriday')
 const {getRestaurantsSaturday, createRestaurantsSaturday, updateRestaurantsSaturday, deleteRestaurantsSaturday} = require('../Controllers/Restaurants/restaurantsControllerSaturday')
 const {getRestaurantsSunday, createRestaurantsSunday, updateRestaurantsSunday, deleteRestaurantsSunday} = require('../Controllers/Restaurants/restaurantsControllerSunday')
-const {getRestaurantsSpecs, createRestaurantsSpecs, updateRestaurantsSpecs, deleteRestaurantsSpecs} = require('../Controllers/Restaurants/restaurantsSpecsController')
+
 
 //Bars Controllers
 const {getBarsMonday, createBarsMonday, updateBarsMonday, deleteBarsMonday} = require('../Controllers/Bars/barsControllerMonday')
@@ -39,14 +39,17 @@ const {getBarsSunday, createBarsSunday, updateBarsSunday, deleteBarsSunday} = re
 //Carousel Staff Controllers
 const {getCarouselStaff, createCarouselStaff, updateCarouselStaff, deleteCarouselStaff,} = require("../Controllers/CarouselStaff/carouselStaffController");
 
-
-//Carousel Staff Controllers
-
-
-const {getVocabulary, addVocabulary, deleteVocabularyWord} = require('../Controllers/Language/vocabularyActivitiesControllers')
+//Vocabulary Locations
 const {getLocationsVocabulary, addLocationsVocabulary, deleteLocationsVocabularyWord } = require('../Controllers/Language/vocabularyLocationsControllers')
-const {getBarsVocabulary, addBarsVocabulary, deleteBarsVocabularyWord } = require('../Controllers/Language/vocabularyBarsControllers')
-const {getRestaurantsVocabulary, addRestaurantsVocabulary, deleteRestaurantsVocabularyWord } = require('../Controllers/Language/vocabularyRestaurantsControllers')
+
+//Restaurants Specs
+const {getType, addType, deleteType } = require('../Controllers/Restaurants/RestaurantsSpecs/typeController')
+const {getService, addService, deleteService } = require('../Controllers/Restaurants/RestaurantsSpecs/serviceController')
+const {getMembers, addMembers, deleteMembers } = require('../Controllers/Restaurants/RestaurantsSpecs/MembersController')
+
+
+
+
 
 //Carousel Routes
 router.route("/carouselactivities/monday").get(getCarouselMonday).post(createCarouselMonday);
@@ -102,20 +105,22 @@ router.route("/carouselstaff/:id").put(updateCarouselStaff).delete(deleteCarouse
 
 
 //Restaurants Specs
-router.route("/restaurants/specs").get(getRestaurantsSpecs).post(createRestaurantsSpecs);
-router.route("/restaurants/specs/:id").put(updateRestaurantsSpecs).delete(deleteRestaurantsSpecs)
+router.route('/restaurants/specs/type').get(getType).post(addType)
+router.route('/restaurants/specs/type/:id').delete(deleteType)
+router.route('/restaurants/specs/service').get(getService).post(addService)
+router.route('/restaurants/specs/service/:id').delete(deleteService)
+router.route('/restaurants/specs/members').get(getMembers).post(addMembers)
+router.route('/restaurants/specs/members/:id').delete(deleteMembers)
 
 
 
-//Vocabulary Routes
-router.route('/vocabulary/activities').get(getVocabulary).post(addVocabulary)
-router.route('/vocabulary/activities/:id').delete(deleteVocabularyWord)
+
+
+//Vocabulary Locations
+
 router.route('/vocabulary/locations').get(getLocationsVocabulary).post(addLocationsVocabulary)
 router.route('/vocabulary/locations/:id').delete(deleteLocationsVocabularyWord)
-router.route('/vocabulary/bars').get(getBarsVocabulary).post(addBarsVocabulary)
-router.route('/vocabulary/bars/:id').delete(deleteBarsVocabularyWord)
-router.route('/vocabulary/restaurants').get(getRestaurantsVocabulary).post(addRestaurantsVocabulary)
-router.route('/vocabulary/restaurants/:id').delete(deleteRestaurantsVocabularyWord)
+
 
 
 //UploadImageRoute

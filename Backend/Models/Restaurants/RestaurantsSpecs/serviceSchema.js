@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const vocabularyActivitiesSchema = mongoose.Schema({
+const serviceSchema = mongoose.Schema({
   en: {
     type: String,
     required: true,
@@ -11,7 +11,4 @@ const vocabularyActivitiesSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model(
-  "VocabularyActivities",
-  vocabularyActivitiesSchema
-);
+module.exports = mongoose.model("Service", serviceSchema);
