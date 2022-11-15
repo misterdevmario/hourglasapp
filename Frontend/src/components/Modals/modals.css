@@ -51,3 +51,30 @@
   right: 1rem;
   z-index: 9999;
 }
+
+@media screen and (max-width:470px){
+  .modal{
+margin-top: 12vh; 
+    width: 100vw;
+    height: 88vh;
+  top: 0;
+    left: 2vw;
+    position: fixed;
+  }
+
+
+  .modal-container{
+    min-width: 100vw;
+
+  }
+  .modal-close {
+    position: absolute;
+    top: 80vh;
+    right: 47vw;
+    z-index: 9999;
+  }
+
+  .modal-close svg{
+    width: 12vh;
+  }
+}

@@ -94,6 +94,7 @@ border-bottom: solid 1px #fff;
   transform: scale(1.2);
   cursor: pointer;
   font-weight: 700;
+  
 }
 
 .restaurants_specs-container-field {
@@ -107,4 +108,34 @@ border-bottom: solid 1px #fff;
   text-align: center;
   font-size: 0.5rem;
   width: 100%;
+}
+
+@media screen and  (max-width:470px){
+  .restaurantsspecs_container{
+    width: 80%;
+    height: 90vh;
+  
+    font-size: var(--font-size-m)
+  }
+  .image_delete{
+    top: 6rem;
+    right: 3rem;
+    filter: drop-shadow(1px 44px 59px #000);
+  }
+  
+  .restaurants_specs-container-form button {
+    height: 2rem;
+  }
+  .restaurants_specs-container-field{
+    height: 4vh;
+  }
+  .restaurants_specs-container-form-title {
+    font-size: var(--font-size-sm);
+  }
+  .restaurants_specs-container-field-error{
+    font-size: var(--font-size-sm);
+  }
+  .restaurants_specs-container-field-error {
+    font-size: .9rem;
+  }
 }

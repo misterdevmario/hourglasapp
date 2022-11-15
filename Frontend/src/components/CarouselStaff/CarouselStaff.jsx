@@ -36,7 +36,7 @@ const CarouselStaff = () => {
                 />
          </div>
          
-       ))}
+       )).reverse()}
         </div>
       </>
     );

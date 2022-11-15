@@ -11,7 +11,7 @@ const AddCarouselImageForm = () => {
   const [isOpenCarouselImage, closeCarouselImage, openCarouselImage] =
     useModal(false);
   return (
-    <div className="form_container">
+    <div className="form_container" id="activities">
       <div className="form_container-icon">
         <div className="form_container-icon-title">Carousel Actividades</div>
         <IoImageOutline

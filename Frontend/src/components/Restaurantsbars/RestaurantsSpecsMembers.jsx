@@ -13,7 +13,7 @@ const RestaurantsSpecsMembers = () => {
       return (
         <div className="conditional_rendering-container">
           <VscEmptyWindow size={100} color="#663388" />
-          <h1>No hay tipos estatus de miembros para mostrar</h1>
+          <h1>No hay estatus para mostrar</h1>
         </div>
       );
 
@@ -90,7 +90,7 @@ const RestaurantsSpecsMembers = () => {
   };
 
   return <div className="locations_container">
-     <div className="locations_container-title">Tipos de estatus de miembros</div>
+     <div className="locations_container-title">Estatus de miembros</div>
     {render()}</div>;
 };
 

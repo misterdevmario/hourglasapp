@@ -114,3 +114,10 @@
     transform: scale(1.1);
   }
   
+  @media screen and (max-width:470px) {
+    .carousel_image-container-card-container{
+      height: 260px;
+      width: 150px;
+      margin: 0.8rem;
+    }
+  }

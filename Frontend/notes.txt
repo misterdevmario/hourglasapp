@@ -9,3 +9,13 @@
               </div>
             ))
             .reverse()}
+
+                   <a href="#activities">Carousel Actividades</a>
+        <a href="#staff">Carousel de personal</a>
+        <a href="#flyer">Carousel Flyers</a>
+        <a href="#restaurants">Restaurantes y Bares</a>
+        <a href="#locations">Locaciones</a>
+        <a href="#members">Estatus de Miembros</a>
+        <a href="#type">Tipos Restaurantes</a>
+        <a href="#service">Tipos de Servicio</a>
+        <IoIosKeypad/>

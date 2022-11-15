@@ -27,8 +27,9 @@ console.log(appInfo.images)
                 <div className="card-name">{img.es}</div>
                 <RiDeleteBin5Line
                   onClick={() => handleDelete(img._id, img.en, img.es)}
-                  className="image_delete"
+                  className="activities-image_delete"
                   size={50}
+                  
                 />
               </div>
             </div>
