@@ -67,14 +67,6 @@ margin-top: 12vh;
     min-width: 100vw;
 
   }
-  .modal-close {
-    position: absolute;
-    top: 80vh;
-    right: 47vw;
-    z-index: 9999;
-  }
 
-  .modal-close svg{
-    width: 12vh;
-  }
+
 }

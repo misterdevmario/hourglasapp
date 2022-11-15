@@ -10,7 +10,7 @@ const RestaurantsSpecsTypeForm = () => {
   const { addRestaurantsType } = useAppInfo();
   const [isOpenType, closeType, openType] = useModal(false);
   return (
-    <div className="restaurants_specs-container">
+    <div className="restaurants_specs-container" id="type">
       <div className="ricon-title">Tipos Restaurantes </div>
       <div className="restaurants_specs-container-form">
         <div className="restaurants_specs-container-form-title">

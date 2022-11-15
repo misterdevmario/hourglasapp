@@ -12,7 +12,10 @@
   --font-size-m: 1.5rem;
   --font-size-l: 2rem;
 }
-
+html {
+  scroll-padding-top: 14vh;
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   padding: 0;

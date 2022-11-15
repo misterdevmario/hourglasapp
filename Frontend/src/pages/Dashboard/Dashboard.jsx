@@ -29,6 +29,7 @@ function Dashboard() {
           </div>
         </div>
         <div className="dashboard_navbar-title">Panel de administración</div>
+       
         <div className="navbar_toggle">
           {toggle ? (
             <BsMenuDown
@@ -71,6 +72,7 @@ function Dashboard() {
           <div className="exitalert">Salir</div>
         </div>
       </div>
+    
 
       <div className="dashboard_categories-container">
         <AddCarosuselImageForm />
@@ -80,6 +82,7 @@ function Dashboard() {
         <AddLocationForm />
         <RestaurantsSpecsRender />
       </div>
+  
     </div>
   );
 }

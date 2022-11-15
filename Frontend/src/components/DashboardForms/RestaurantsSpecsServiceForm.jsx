@@ -10,7 +10,7 @@ const RestaurantsSpecsServiceForm = () => {
   const { addRestaurantsService } = useAppInfo();
   const [isOpenService, closeService, openService] = useModal(false);
   return (
-    <div className="restaurants_specs-container">
+    <div className="restaurants_specs-container" id="service">
       <div className="ricon-title">Tipos de Servicio</div>
       <div className="restaurants_specs-container-form">
         <div className="restaurants_specs-container-form-title">

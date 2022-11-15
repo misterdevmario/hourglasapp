@@ -11,7 +11,7 @@ const AddRestaurantImageForm = () => {
   const [isOpenRestaurant, closeRestaurant, openRestaurant] =
     useModal(false);
   return (
-    <div className="form_container">
+    <div className="form_container" id="restaurants">
       <div className="form_container-icon">
         <div className="form_container-icon-title">Restaurantes y Bares</div>
         <BiRestaurant

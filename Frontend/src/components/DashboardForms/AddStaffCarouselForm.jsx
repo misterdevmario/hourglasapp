@@ -11,7 +11,7 @@ const AddCarouselImageForm = () => {
   const [isOpenCarouselStaff, closeCarouselStaff, openCarouselStaff] =
     useModal(false);
   return (
-    <div className="form_container">
+    <div className="form_container" id="staff">
       <div className="form_container-icon">
         <div className="form_container-icon-title">Carousel de Personal</div>
         <BsPersonBoundingBox

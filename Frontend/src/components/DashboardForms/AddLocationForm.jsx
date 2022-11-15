@@ -10,7 +10,7 @@ const AddLocationForm = () => {
   const { addLocation } = useAppInfo();
   const [isOpenLocations, closeLocations, openLocations] = useModal(false);
   return (
-    <div className="form_container">
+    <div className="form_container" id="locations">
       <div className="form_container-icon">
         <div className="icon-title">Locaciones</div>
         <MdShareLocation className="form_container-icon-openmodal" onClick={openLocations} size={70} color="#fff" />

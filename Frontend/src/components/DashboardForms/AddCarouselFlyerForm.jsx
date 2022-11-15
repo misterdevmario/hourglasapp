@@ -11,7 +11,7 @@ const AddCarouselFlyerForm = () => {
   const [isOpenCarouselFlyerImage, closeCarouselFlyerImage, openCarouselFlyerImage] =
     useModal(false);
   return (
-    <div className="form_container">
+    <div className="form_container" id="flyer">
       <div className="form_container-icon">
         <div className="form_container-icon-title">Carousel Flyers</div>
         <HiOutlineDocumentReport

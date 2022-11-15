@@ -10,7 +10,7 @@ const RestaurantsSpecsMembersForm = () => {
   const { addRestaurantsMembers } = useAppInfo();
   const [isOpenMembers, closeMembers, openMembers] = useModal(false);
   return (
-    <div className="restaurants_specs-container">
+    <div className="restaurants_specs-container" id="members">
       <div className="ricon-title">Estatus Miembros </div>
       <div className="restaurants_specs-container-form">
         <div className="restaurants_specs-container-form-title">
