@@ -2,7 +2,7 @@ const asyncHandler = require("express-async-handler");
 const BarsWednesday = require("../../Models/Bars/barsSchemaWednesday");
 
 const getBarsWednesday = asyncHandler(async (req, res) => {
-  const getInfo = await BarsThursday.find();
+  const getInfo = await BarsWednesday.find();
   res.status(200).json(getInfo);
 });
 

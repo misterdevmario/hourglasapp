@@ -6,7 +6,6 @@ import "./carouselactivities.css";
 
 const CarouselActivities = () => {
   const { appInfo, deleteImageBank } = useAppInfo();
-console.log(appInfo.images)
   const render = () => {
     if (appInfo.images.length === 0)
       return (

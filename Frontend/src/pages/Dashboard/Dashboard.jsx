@@ -4,6 +4,7 @@ import hourglass from "../../assets/Logos/hourglass.png";
 import { TbDoorExit } from "react-icons/tb";
 import { IoIosKeypad } from "react-icons/io";
 import { BsMenuDown, BsMenuUp } from "react-icons/bs";
+import {useNavigate} from 'react-router-dom'
 import {
   AddLocationForm,
   AddCarosuselImageForm,
@@ -17,6 +18,7 @@ import "./dashboard.css";
 
 function Dashboard() {
   const [toggle, setToggle] = useState(false);
+  const navigate = useNavigate()
   return (
     <div className="dashboard_container">
       <div className="dashboard_navbar">
@@ -59,6 +61,7 @@ function Dashboard() {
         </div>
         <div className="dashboard_navbar-btn">
           <IoIosKeypad
+          onClick={()=>navigate('/monday')}
             className="dashboard_navbar-btn-iconapp"
             size={40}
             color="#fff"

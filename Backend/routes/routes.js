@@ -64,8 +64,8 @@ router.route("/carouselactivities/friday").get(getCarouselFriday).post(createCar
 router.route("/carouselactivities/friday/:id").put(updateCarouselFriday).delete(deleteCarouselFriday);
 router.route("/carouselactivities/saturday").get(getCarouselSaturday).post(createCarouselSaturday);
 router.route("/carouselactivities/saturday/:id").put(updateCarouselSaturday).delete(deleteCarouselSaturday);
-router.route("/carouselactivities/Sunday").get(getCarouselSunday).post(createCarouselSunday);
-router.route("/carouselactivities/Sunday/:id").put(updateCarouselSunday).delete(deleteCarouselSunday);
+router.route("/carouselactivities/sunday").get(getCarouselSunday).post(createCarouselSunday);
+router.route("/carouselactivities/sunday/:id").put(updateCarouselSunday).delete(deleteCarouselSunday);
 
 //Restaurants Routes
 router.route("/restaurants/monday").get(getRestaurantsMonday).post(createRestaurantsMonday);
