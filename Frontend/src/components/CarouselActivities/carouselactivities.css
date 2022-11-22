@@ -131,7 +131,7 @@
 .restaurantsbars-image_delete {
   position: absolute;
   top: 1.5rem;
-  right: 1.8rem;
+  right: 2rem;
   opacity: 0.5;
   transition: all 0.5s ease-out;
 }
@@ -160,7 +160,7 @@
   .restaurantsbars-image_delete {
     position: absolute;
     top: 1.8rem;
-    right: 3rem;
+    right: 2rem;
   }
 
   .locations_container-title {

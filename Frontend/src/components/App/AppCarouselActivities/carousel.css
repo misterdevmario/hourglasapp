@@ -1,9 +1,9 @@
 .card_container {
   position: relative;
-  height: 100vh;
+  height: 35vh;
   width: 100vw;
   overflow: hidden;
-  background-color: #fff;
+  background-color: rgb(239, 197, 197);
   display: flex;
   justify-content: center;
   align-items: center;

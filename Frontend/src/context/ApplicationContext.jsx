@@ -82,7 +82,8 @@ export const ApplicationContextProvider = ({ children }) => {
     restaurants:applicationInfo.resMonday,
     bars: applicationInfo.barsMonday,
     staff:applicationInfo.carouselStaff,
-    flyers:applicationInfo.carouselFlyers
+    flyers:applicationInfo.carouselFlyers,
+    day:"Lunes"
   }
   let thuesday ={
     activities:applicationInfo.cActThuesday,
