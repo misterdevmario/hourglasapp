@@ -58,7 +58,7 @@ export const getCarouselFlyerImagesRequest = async () =>
 };
 
 export const deleteCarouselFlyerImageRequest = async (id) =>
-  await axios.delete("http://localhost:8000/imagebank/barsrestaurants/" + id);
+  await axios.delete("http://localhost:8000/imagebank/flyer/" + id);
 
 //ImageBank/RestaurantsBars
 export const getRestaurantsBarsImagesRequest = async () =>

@@ -22,12 +22,12 @@ const CarouselFlyer = () => {
           {appInfo.carouselflyer
             .map((img) => (
               <div key={img._id} className="carousel_image-container-card">
-                <img src={img.image.url} alt={img.name} />
+                <img src={img.image.url} alt={img.en} />
                 <div className="card-name-container">
                   <div className="card-name">{img.en}</div>
                   <div className="card-name">{img.es}</div>
                   <RiDeleteBin5Line
-                    onClick={() => handleDelete(img._id, img.name)}
+                    onClick={() => handleDelete(img._id, img.en, img.es)}
                     className="image_delete"
                     size={50}
                   />
@@ -40,12 +40,13 @@ const CarouselFlyer = () => {
     );
   };
 
-  const handleDelete = (id, name) => {
+  const handleDelete = (id, en, es) => {
     toast(
       (t) => (
         <div className="toast_container">
           <div className="toast_container-text">Esta seguro de eliminar?</div>
-          <div className="toast_container-text-name">"{name}"</div>
+          <div className="toast_container-text-name">"{en}"</div>
+          <div className="toast_container-text-name">"{es}"</div>
           <div className="toast_container-btn">
             <button
               onClick={() => {
