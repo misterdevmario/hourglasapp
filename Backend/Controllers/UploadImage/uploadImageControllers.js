@@ -8,6 +8,11 @@ const getUploadedImages = asyncHandler(async (req, res) => {
   res.status(200).json(getImages);
 });
 
+const getOneUploadedImage = asyncHandler(async (req, res) => {
+  const getOneImage = await UploadImage.findById(req.params.id);
+  res.status(200).json(getOneImage);
+});
+
 const addUploadedImage = asyncHandler(async (req, res) => {
   const { en, es } = req.body;
   if (!req.body) {
@@ -45,4 +50,5 @@ module.exports = {
   getUploadedImages,
   addUploadedImage,
   deleteUploadedImage,
+  getOneUploadedImage
 };

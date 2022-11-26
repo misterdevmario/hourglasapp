@@ -3,7 +3,7 @@ import {} from "../api/infoRequests";
 import {
   getCarouselActRequestMonday, getCarouselActRequestThuesday, getCarouselActRequestWednesday, getCarouselActRequestThursday, getCarouselActRequestFriday, getCarouselActRequestSaturday, getCarouselActRequestSunday,getRestaurantsRequestMonday, getRestaurantsRequestThuesday, getRestaurantsRequestWednesday, getRestaurantsRequestThursday, getRestaurantsRequestFriday, getRestaurantsRequestSaturday, getRestaurantsRequestSunday,
   getBarsRequestMonday, getBarsRequestThuesday, getBarsRequestWednesday, getBarsRequestThursday, getBarsRequestFriday, getBarsRequestSaturday, getBarsRequestSunday,
-  getCarouselFlyersRequest,getCarouselStaffRequest
+  getCarouselFlyersRequest,getCarouselStaffRequest, getOneCarouselActRequest
 } from "../api/appInfoRequests";
 
 const applicationContext = createContext();
@@ -44,6 +44,7 @@ export const ApplicationContextProvider = ({ children }) => {
 
       const cFlyers = await getCarouselFlyersRequest()
       const cStaff = await getCarouselStaffRequest()
+
 
       setApplicationInfo({
         cActMonday: camonday.data,
@@ -127,10 +128,67 @@ export const ApplicationContextProvider = ({ children }) => {
     staff:applicationInfo.carouselStaff,
     flyers:applicationInfo.carouselFlyers
   }
+  useEffect(()=>{
+    monday ={
+     activities:applicationInfo.cActMonday,
+     restaurants:applicationInfo.resMonday,
+     bars: applicationInfo.barsMonday,
+     staff:applicationInfo.carouselStaff,
+     flyers:applicationInfo.carouselFlyers,
+     day:"Lunes"
+   }
+    thuesday ={
+     activities:applicationInfo.cActThuesday,
+     restaurants:applicationInfo.resThuesday,
+     bars: applicationInfo.barsThuesday,
+     staff:applicationInfo.carouselStaff,
+     flyers:applicationInfo.carouselFlyers
+   }
+    wednesday ={
+     activities:applicationInfo.cActWednesday,
+     restaurants:applicationInfo.resWednesday,
+     bars: applicationInfo.barsWednesday,
+     staff:applicationInfo.carouselStaff,
+     flyers:applicationInfo.carouselFlyers
+   }
+    thursday ={
+     activities:applicationInfo.cActThursday,
+     restaurants:applicationInfo.resThursday,
+     bars: applicationInfo.barsThursday,
+     staff:applicationInfo.carouselStaff,
+     flyers:applicationInfo.carouselFlyers
+   }
+    friday ={
+     activities:applicationInfo.cActFriday,
+     restaurants:applicationInfo.resFriday,
+     bars: applicationInfo.barsFriday,
+     staff:applicationInfo.carouselStaff,
+     flyers:applicationInfo.carouselFlyers
+   }
+    saturday ={
+     activities:applicationInfo.cActSaturday,
+     restaurants:applicationInfo.resSaturday,
+     bars: applicationInfo.barsSaturday,
+     staff:applicationInfo.carouselStaff,
+     flyers:applicationInfo.carouselFlyers
+   }
+    sunday ={
+     activities:applicationInfo.cActSunday,
+     restaurants:applicationInfo.resSunday,
+     bars: applicationInfo.barsSunday,
+     staff:applicationInfo.carouselStaff,
+     flyers:applicationInfo.carouselFlyers
+   }
+ },[applicationInfo])
+ const getOneCarouselAct = async(id)=>{
+  const oneRes = await getOneCarouselActRequest(id)
+ 
+  return oneRes.data
+}
   return (
     <applicationContext.Provider
       value={{
-        applicationInfo,monday,thuesday,wednesday,thursday,friday,saturday,sunday
+        applicationInfo,monday,thuesday,wednesday,thursday,friday,saturday,sunday,getOneCarouselAct
       }}
     >
       {children}

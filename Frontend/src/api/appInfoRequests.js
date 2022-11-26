@@ -7,6 +7,8 @@ export const getCarouselActRequestThursday = async () =>await axios.get("http://
 export const getCarouselActRequestFriday = async () =>await axios.get("http://localhost:8000/carouselactivities/friday");
 export const getCarouselActRequestSaturday = async () =>await axios.get("http://localhost:8000/carouselactivities/saturday");
 export const getCarouselActRequestSunday = async () =>await axios.get("http://localhost:8000/carouselactivities/sunday");
+export const getOneCarouselActRequest = async (id) => await axios.get("http://localhost:8000/imagebank/" + id)
+
 
 //Restaurants 
 export const getRestaurantsRequestMonday = async () =>await axios.get("http://localhost:8000/restaurants/monday");

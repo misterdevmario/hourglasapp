@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 //UploadImage Controllers
-const {getUploadedImages, addUploadedImage,deleteUploadedImage} = require('../Controllers/UploadImage/uploadImageControllers')
+const {getUploadedImages, addUploadedImage,deleteUploadedImage,getOneUploadedImage } = require('../Controllers/UploadImage/uploadImageControllers')
 const {getUploadedStaffImages, addUploadedStaffImage,deleteUploadedStaffImage} = require('../Controllers/UploadImage/uploadStaffImageControllers')
 const {getUploadedFlyerImages, addUploadedFlyerImage,deleteUploadedFlyerImage} = require('../Controllers/UploadImage/uploadFlyerControllers')
 const {getUploadedBarsRestaurantsImages, addUploadedBarsRestaurantsImage,deleteUploadedBarsRestaurantsImage} = require('../Controllers/UploadImage/uploadBarsRestaurantsControllers')
@@ -132,6 +132,7 @@ router.route("/imagebank/barsrestaurants").get(getUploadedBarsRestaurantsImages)
 router.route("/imagebank/barsrestaurants/:id").delete(deleteUploadedBarsRestaurantsImage)
 router.route("/imagebank/flyer").get(getUploadedFlyerImages).post(addUploadedFlyerImage);
 router.route("/imagebank/flyer/:id").delete(deleteUploadedFlyerImage)
+router.route("/imagebank/:id").get(getOneUploadedImage)
 
 
 module.exports = router
