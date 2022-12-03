@@ -8,6 +8,8 @@
 }
 .dos{
     height: 53vh;
+    position: relative;
+    z-index: -1;
 }
 .activities{
     height: 44vh;

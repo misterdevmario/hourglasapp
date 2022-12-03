@@ -3,18 +3,18 @@ const router = express.Router();
 
 //UploadImage Controllers
 const {getUploadedImages, addUploadedImage,deleteUploadedImage,getOneUploadedImage } = require('../Controllers/UploadImage/uploadImageControllers')
-const {getUploadedStaffImages, addUploadedStaffImage,deleteUploadedStaffImage} = require('../Controllers/UploadImage/uploadStaffImageControllers')
-const {getUploadedFlyerImages, addUploadedFlyerImage,deleteUploadedFlyerImage} = require('../Controllers/UploadImage/uploadFlyerControllers')
-const {getUploadedBarsRestaurantsImages, addUploadedBarsRestaurantsImage,deleteUploadedBarsRestaurantsImage} = require('../Controllers/UploadImage/uploadBarsRestaurantsControllers')
+const {getUploadedStaffImages, addUploadedStaffImage,deleteUploadedStaffImage,getOneUploadedStaffImages} = require('../Controllers/UploadImage/uploadStaffImageControllers')
+const {getUploadedFlyerImages, addUploadedFlyerImage,deleteUploadedFlyerImage,getOneUploadedFlyerImage} = require('../Controllers/UploadImage/uploadFlyerControllers')
+const {getUploadedBarsRestaurantsImages, addUploadedBarsRestaurantsImage,deleteUploadedBarsRestaurantsImage,getOneBarsRestaurantsImage} = require('../Controllers/UploadImage/uploadBarsRestaurantsControllers')
 
 //CarouselActivities Controllers
-const {getCarouselMonday, createCarouselMonday, updateCarouselMonday, deleteCarouselMonday,} = require("../Controllers/CarouselActivities/carouselControllerMonday");
-const {getCarouselThuesday, createCarouselThuesday, updateCarouselThuesday, deleteCarouselThuesday,} = require("../Controllers/CarouselActivities/carouselControllerThuesday");
-const {getCarouselWednesday, createCarouselWednesday, updateCarouselWednesday, deleteCarouselWednesday,} = require("../Controllers/CarouselActivities/carouselControllerWednesday");
-const {getCarouselThursday, createCarouselThursday, updateCarouselThursday, deleteCarouselThursday,} = require("../Controllers/CarouselActivities/carouselControllerThursday");
-const {getCarouselFriday, createCarouselFriday, updateCarouselFriday, deleteCarouselFriday,} = require("../Controllers/CarouselActivities/carouselControllerFriday");
-const {getCarouselSaturday, createCarouselSaturday, updateCarouselSaturday, deleteCarouselSaturday,} = require("../Controllers/CarouselActivities/carouselControllerSaturday");
-const {getCarouselSunday, createCarouselSunday, updateCarouselSunday, deleteCarouselSunday,} = require("../Controllers/CarouselActivities/carouselControllerSunday");
+const {getCarouselMonday, createCarouselMonday, updateCarouselMonday, deleteCarouselMonday,getOneCarouselMonday} = require("../Controllers/CarouselActivities/carouselControllerMonday");
+const {getCarouselThuesday, createCarouselThuesday, updateCarouselThuesday, deleteCarouselThuesday,getOneCarouselThuesday} = require("../Controllers/CarouselActivities/carouselControllerThuesday");
+const {getCarouselWednesday, createCarouselWednesday, updateCarouselWednesday, deleteCarouselWednesday,getOneCarouselWednesday} = require("../Controllers/CarouselActivities/carouselControllerWednesday");
+const {getCarouselThursday, createCarouselThursday, updateCarouselThursday, deleteCarouselThursday,getOneCarouselThursday} = require("../Controllers/CarouselActivities/carouselControllerThursday");
+const {getCarouselFriday, createCarouselFriday, updateCarouselFriday, deleteCarouselFriday,getOneCarouselFriday} = require("../Controllers/CarouselActivities/carouselControllerFriday");
+const {getCarouselSaturday, createCarouselSaturday, updateCarouselSaturday, deleteCarouselSaturday,getOneCarouselSaturday} = require("../Controllers/CarouselActivities/carouselControllerSaturday");
+const {getCarouselSunday, createCarouselSunday, updateCarouselSunday, deleteCarouselSunday,getOneCarouselSunday} = require("../Controllers/CarouselActivities/carouselControllerSunday");
 
 
 //Restaurants Controllers
@@ -36,8 +36,6 @@ const {getBarsFriday, createBarsFriday, updateBarsFriday, deleteBarsFriday} = re
 const {getBarsSaturday, createBarsSaturday, updateBarsSaturday, deleteBarsSaturday} = require('../Controllers/Bars/barsControllerSaturday')
 const {getBarsSunday, createBarsSunday, updateBarsSunday, deleteBarsSunday} = require('../Controllers/Bars/barsControllerSunday')
 
-//Carousel Staff Controllers
-const {getCarouselStaff, createCarouselStaff, updateCarouselStaff, deleteCarouselStaff,} = require("../Controllers/CarouselStaff/carouselStaffController");
 
 //Vocabulary Locations
 const {getLocationsVocabulary, addLocationsVocabulary, deleteLocationsVocabularyWord } = require('../Controllers/Language/vocabularyLocationsControllers')
@@ -67,6 +65,7 @@ router.route("/carouselactivities/saturday/:id").put(updateCarouselSaturday).del
 router.route("/carouselactivities/sunday").get(getCarouselSunday).post(createCarouselSunday);
 router.route("/carouselactivities/sunday/:id").put(updateCarouselSunday).delete(deleteCarouselSunday);
 
+
 //Restaurants Routes
 router.route("/restaurants/monday").get(getRestaurantsMonday).post(createRestaurantsMonday);
 router.route("/restaurants/monday/:id").put(updateRestaurantsMonday).delete(deleteRestaurantsMonday)
@@ -82,6 +81,7 @@ router.route("/restaurants/saturday").get(getRestaurantsSaturday).post(createRes
 router.route("/restaurants/saturday/:id").put(updateRestaurantsSaturday).delete(deleteRestaurantsSaturday)
 router.route("/restaurants/sunday").get(getRestaurantsSunday).post(createRestaurantsSunday);
 router.route("/restaurants/sunday/:id").put(updateRestaurantsSunday).delete(deleteRestaurantsSunday)
+
 
 //Bars Routes
 router.route("/bars/monday").get(getBarsMonday).post(createBarsMonday);
@@ -99,9 +99,7 @@ router.route("/bars/saturday/:id").put(updateBarsSaturday).delete(deleteBarsSatu
 router.route("/bars/sunday").get(getBarsSunday).post(createBarsSunday);
 router.route("/bars/sunday/:id").put(updateBarsSunday).delete(deleteBarsSunday)
 
-//Carousel Staff
-router.route("/carouselstaff").get(getCarouselStaff).post(createCarouselStaff);
-router.route("/carouselstaff/:id").put(updateCarouselStaff).delete(deleteCarouselStaff);
+
 
 
 //Restaurants Specs
@@ -133,6 +131,16 @@ router.route("/imagebank/barsrestaurants/:id").delete(deleteUploadedBarsRestaura
 router.route("/imagebank/flyer").get(getUploadedFlyerImages).post(addUploadedFlyerImage);
 router.route("/imagebank/flyer/:id").delete(deleteUploadedFlyerImage)
 router.route("/imagebank/:id").get(getOneUploadedImage)
+router.route("/imagebank/staff/:id").get(getOneUploadedStaffImages)
+router.route("/imagebank/flyer/:id").get(getOneUploadedFlyerImage)
+router.route("/imagebank/barsrestaurants/:id").get(getOneBarsRestaurantsImage)
+router.route("/carouselactivities/friday/:id").get(getOneCarouselFriday)
+router.route("/carouselactivities/monday/:id").get(getOneCarouselMonday)
+router.route("/carouselactivities/saturday/:id").get(getOneCarouselSaturday)
+router.route("/carouselactivities/sunday/:id").get(getOneCarouselSunday)
+router.route("/carouselactivities/thuesday/:id").get(getOneCarouselThuesday)
+router.route("/carouselactivities/thursday/:id").get(getOneCarouselThursday)
+router.route("/carouselactivities/wednesday/:id").get(getOneCarouselWednesday)
 
 
 module.exports = router

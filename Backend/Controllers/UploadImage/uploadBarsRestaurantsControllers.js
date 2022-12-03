@@ -8,6 +8,11 @@ const getUploadedBarsRestaurantsImages = asyncHandler(async (req, res) => {
   res.status(200).json(getImages);
 });
 
+const getOneBarsRestaurantsImage = asyncHandler(async(req,res)=>{
+  const getOneImage = await UploadBarsRestaurantsImage.findById(req.params.id)
+  res.status(200).json(getOneImage)
+})
+
 const addUploadedBarsRestaurantsImage = asyncHandler(async (req, res) => {
   const { name } = req.body;
   if (!req.body) {
@@ -45,4 +50,5 @@ module.exports = {
   getUploadedBarsRestaurantsImages,
   addUploadedBarsRestaurantsImage,
   deleteUploadedBarsRestaurantsImage,
+  getOneBarsRestaurantsImage
 };

@@ -5,7 +5,7 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 
 import "./modals.css";
 
-const Modal = ({ children, isOpen, closeModal }) => {
+const AppModal = ({ children, isOpen, closeModal }) => {
 
   const onClickClose = (e) => {
     if (e.key === "Enter" || "Escape") {
@@ -20,7 +20,7 @@ const Modal = ({ children, isOpen, closeModal }) => {
       };
   }, []);
 
-  return ReactDOM.createPortal (
+  return ReactDOM.createPortal(
     <div className={`modal ${isOpen && "is-open"}`}>
       <AiOutlineCloseCircle
         onClick={(e)=>{closeModal(); e.stopPropagation(e)}}
@@ -30,8 +30,8 @@ const Modal = ({ children, isOpen, closeModal }) => {
       />
       
       <div className="modal-container">{children}</div>
-    </div>, document.getElementById("portal")
+    </div>, document.getElementById('portal')
   );
 };
 
-export default Modal;
+export default AppModal;

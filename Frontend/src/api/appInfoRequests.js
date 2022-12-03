@@ -1,4 +1,7 @@
 import axios from "axios";
+
+
+
 //Carousel Activities
 export const getCarouselActRequestMonday = async () =>await axios.get("http://localhost:8000/carouselactivities/monday");
 export const getCarouselActRequestThuesday = async () =>await axios.get("http://localhost:8000/carouselactivities/thuesday");
@@ -8,6 +11,7 @@ export const getCarouselActRequestFriday = async () =>await axios.get("http://lo
 export const getCarouselActRequestSaturday = async () =>await axios.get("http://localhost:8000/carouselactivities/saturday");
 export const getCarouselActRequestSunday = async () =>await axios.get("http://localhost:8000/carouselactivities/sunday");
 export const getOneCarouselActRequest = async (id) => await axios.get("http://localhost:8000/imagebank/" + id)
+export const putOneCarouselActRequestFriday = async (id, update) => await axios.put(`http://localhost:8000/carouselactivities/friday/${id}`, update )
 
 
 //Restaurants 
@@ -33,6 +37,7 @@ export const getCarouselFlyersRequest = async () =>await axios.get("http://local
 
 //Carousel Staff
 export const getCarouselStaffRequest = async () =>await axios.get("http://localhost:8000/imagebank/staff");
+export const getOneBarsRestaurantsRequest = async (id) =>await axios.get("http://localhost:8000/imagebank/barsrestaurants/" + id);
 
 
 

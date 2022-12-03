@@ -5,11 +5,19 @@ const carouselWednesdaySchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  location: {
+  locationEn: {
     type: String,
     required: true,
   },
-  activity: {
+  locationEs: {
+    type: String,
+    required: true,
+  },
+  activityEn: {
+    type: String,
+    required: true,
+  },
+  activityEs: {
     type: String,
     required: true,
   },

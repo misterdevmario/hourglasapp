@@ -14,6 +14,7 @@
   background: var(--bg-modal);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
+  z-index: 4;
 }
 
 .modal.is-open {
@@ -40,6 +41,7 @@
   box-shadow: inset 0 0 5px #fff;
   border-radius: 5px;
 }
+
 .modal-container::-webkit-scrollbar-thumb {
   background: var(--bg-main);
   border-radius: 5px;

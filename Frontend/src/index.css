@@ -4,6 +4,7 @@
  
   --border-radius: 5px;
   --box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.3);
+  --transparency:rgba(119, 41, 236, 0.8);
   --bg-main: #663388;
   --bg-modal:#7a7b7f;
   --bg-linear: linear-gradient(rgba(107, 42, 140, 1), rgba(83, 32, 107));
@@ -11,10 +12,12 @@
   --font-size-sm: 1rem;
   --font-size-m: 1.5rem;
   --font-size-l: 2rem;
+ 
 }
 html {
   scroll-padding-top: 14vh;
   scroll-behavior: smooth;
+  text-transform: capitalize;
 }
 body {
   margin: 0;

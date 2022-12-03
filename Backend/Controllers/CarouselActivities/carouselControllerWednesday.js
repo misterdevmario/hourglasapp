@@ -6,16 +6,24 @@ const getCarouselWednesday = asyncHandler(async (req, res) => {
   res.status(200).json(getInfo);
 });
 
+const getOneCarouselWednesday = asyncHandler(async(req,res) => {
+  const getOneInfo = await CarouselWednesday.findById(req.params.id)
+  res.status(200).json(getOneInfo)
+})
+
 const createCarouselWednesday = asyncHandler(async (req, res) => {
-  const { hours, location, activity, image } = req.body;
+  const { hours, locationEn, locationEs, activityEn, activityEs, image } =
+    req.body;
   if (!req.body) {
     throw new Error("Please fill all inputs");
   }
 
   const addCarouselItem = await CarouselWednesday.create({
     hours,
-    location,
-    activity,
+    locationEn,
+    locationEs,
+    activityEn,
+    activityEs,
     image,
   });
   res.status(200).json(addCarouselItem);
@@ -50,4 +58,5 @@ module.exports = {
   createCarouselWednesday,
   updateCarouselWednesday,
   deleteCarouselWednesday,
+  getOneCarouselWednesday
 };

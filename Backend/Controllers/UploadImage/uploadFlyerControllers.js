@@ -8,6 +8,11 @@ const getUploadedFlyerImages = asyncHandler(async (req, res) => {
   res.status(200).json(getImages);
 });
 
+const getOneUploadedFlyerImage = asyncHandler(async(req,res)=>{
+  const getOneFlyerImage = await UploadFlyer.findById(req.params.id)
+  res.status(200).json(getOneFlyerImage)
+})
+
 const addUploadedFlyerImage = asyncHandler(async (req, res) => {
   const { en, es } = req.body;
   if (!req.body) {
@@ -45,4 +50,5 @@ module.exports = {
   getUploadedFlyerImages,
   addUploadedFlyerImage,
   deleteUploadedFlyerImage,
+  getOneUploadedFlyerImage
 };
